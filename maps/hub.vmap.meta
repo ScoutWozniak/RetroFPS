@@ -1,0 +1,30 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "hub",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "hub",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "quack.devgen01b#11249",
+        "quack.devgen01#11247",
+        "shadb.trilby#20616",
+        "apetavern.concrete_hs_01a#22515"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/hub.vmap"
+      }
+    }
+  }
+}

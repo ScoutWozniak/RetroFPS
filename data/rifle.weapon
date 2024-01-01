@@ -1,0 +1,8 @@
+{
+  "Name": "Rifle",
+  "WeaponPrefab": "prefabs/weapons/rifle.prefab",
+  "Ammo": "Rifle",
+  "StartingAmmo": 30,
+  "weaponSlot": 2,
+  "__references": []
+}

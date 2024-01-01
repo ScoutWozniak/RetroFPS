@@ -1,0 +1,54 @@
+{
+  "RootObject": {
+    "Id": "36ebcc37-f4f1-49f4-a44f-cdf454a3470e",
+    "Name": "pistol",
+    "Tags": "viewmodel",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "WeaponFireComponent",
+        "__enabled": true,
+        "Ammo": "Pistol",
+        "AmmoUsage": 1,
+        "FireDelay": 0.1,
+        "FireLight": "prefabs/particles/firelight.prefab",
+        "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
+        "HitParticles": "prefabs/particles/hitparticles.prefab",
+        "InputType": "Pressed",
+        "Viewmodel": "fa6372c9-e5c6-4709-9d71-46c5f10a1d01"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "fa6372c9-e5c6-4709-9d71-46c5f10a1d01",
+        "Name": "Viewmodel",
+        "Position": "18.35507,-6.055283,-8.462614",
+        "Rotation": "-0.00000003989908,-0.000000001021777,-0.6503825,0.759607",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/pistol.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ViewmodelComponent",
+            "__enabled": true,
+            "FireGraphValue": "b_fire"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

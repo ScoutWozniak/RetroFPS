@@ -1,0 +1,77 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Collections.Generic;
+@inherits PanelComponent
+
+<root>
+	<div class="output">
+		@foreach (var entry in Entries)
+		{
+			<div class="chat_entry">
+				<div class="message">@entry.message</div>
+			</div>
+		}
+	</div>
+
+	<div class="vitals">
+
+		<div class="health">
+			<div class="icon">heart_broken</div>
+			<div class="value">@HealthComp.Health</div>
+
+		</div>
+
+		<div class="armor">
+			<div class="icon">shield</div>
+			<div class="value">@HealthComp.Armour</div>
+		</div>
+
+	</div>
+
+	<div class="item">
+
+		<div class="value">@WeaponManager.GetActiveAmmo()</div>
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public string MyStringValue { get; set; } = "Hello World!";
+
+	public record Entry(string message, RealTimeSince timeSinceAdded);
+	List<Entry> Entries = new();
+
+	[Property] HealthComponent HealthComp { get; set; }
+
+	[Property] PlayerWeaponManagerComponent WeaponManager { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(MyStringValue, HealthComp.Health, HealthComp.Armour, WeaponManager.GetActiveAmmo());
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		if (Entries.RemoveAll(x => x.timeSinceAdded > 5.0f) > 0)
+		{
+			StateHasChanged();
+		}
+	}
+
+	public void AddText(string message)
+	{
+		Entries.Clear();
+		message = message.Truncate(300);
+
+		if (string.IsNullOrWhiteSpace(message))
+			return;
+
+		Log.Info($"{message}");
+
+		Entries.Add(new Entry(message, 0.0f));
+		StateHasChanged();
+	}
+
+}

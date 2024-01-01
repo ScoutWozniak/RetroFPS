@@ -1,0 +1,54 @@
+{
+  "RootObject": {
+    "Id": "30d566fc-6ce3-436e-bbf5-7b0867b47d4e",
+    "Name": "rifle",
+    "Tags": "viewmodel",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "WeaponFireComponent",
+        "__enabled": true,
+        "Ammo": "Rifle",
+        "AmmoUsage": 1,
+        "FireDelay": 0.1,
+        "FireLight": "prefabs/particles/firelight.prefab",
+        "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
+        "HitParticles": "prefabs/particles/hitparticles.prefab",
+        "InputType": "Down",
+        "Viewmodel": "4200297e-5ce9-43c3-affd-39925c4c1e0d"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "4200297e-5ce9-43c3-affd-39925c4c1e0d",
+        "Name": "Viewmodel",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ViewmodelComponent",
+            "__enabled": true,
+            "FireGraphValue": "b_attack"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.v_mp5"
+  ]
+}

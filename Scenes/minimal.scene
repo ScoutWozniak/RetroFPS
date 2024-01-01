@@ -1,0 +1,405 @@
+{
+  "GameObjects": [
+    {
+      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "a72f3f69-cd35-41a7-a31b-c1c2cee4b079",
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "hub"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "33340a7a-9ec8-4521-8c5d-eb4500c37167",
+      "Name": "Point Light",
+      "Position": "96,-128,64",
+      "Tags": "light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "f1d173f6-d3fb-4f8e-a456-be638b865658",
+      "Name": "Point Light (1)",
+      "Position": "480,-544,64.00002",
+      "Tags": "light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.24566,0.88614,0.25847,1",
+          "Radius": 200
+        }
+      ]
+    },
+    {
+      "Id": "e982566a-474d-4d41-967d-7821f4b169a8",
+      "Name": "Point Light (2)",
+      "Position": "-96,-576,96",
+      "Tags": "light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0,0.18,1,1",
+          "Radius": 200
+        }
+      ]
+    },
+    {
+      "Id": "dba7123a-5087-4168-af66-a05f711947a8",
+      "Name": "Point Light (3)",
+      "Position": "608,0,96.00008",
+      "Tags": "light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.88614,0.24566,0.24566,1",
+          "Radius": 200
+        }
+      ]
+    },
+    {
+      "Id": "8faf6c52-1898-4cb0-86a4-a19c83ca0cc1",
+      "Name": "Sun",
+      "Position": "53.27502,-99.10714,66.62511",
+      "Rotation": "-0.00000004026321,0.6755043,-0.000000000000001786815,0.7373562",
+      "Tags": "light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.12376,0.12376,0.12376,1",
+          "Shadows": true,
+          "SkyColor": "0.36634,0.36634,0.36634,1"
+        }
+      ]
+    },
+    {
+      "Id": "8682ba29-494e-495e-97fc-2efd9e61b64c",
+      "Name": "Player",
+      "Position": "64,-96,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "playerhitbox,trigger",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "HealthComponent",
+          "__enabled": true,
+          "Armour": 0,
+          "Health": 100,
+          "HurtSound": null
+        },
+        {
+          "__type": "PlayerController",
+          "__enabled": true,
+          "Eye": "7f674d3a-74d2-46bb-80be-9afdb1d7cc05",
+          "Gravity": "0,0,800",
+          "HeadbobAmmount": 5,
+          "HeadbobSpeed": 5,
+          "RunSpeed": 320,
+          "WalkSpeed": 110
+        }
+      ],
+      "Children": [
+        {
+          "Id": "7f674d3a-74d2-46bb-80be-9afdb1d7cc05",
+          "Name": "Eye",
+          "Position": "0,0,64",
+          "Enabled": true
+        },
+        {
+          "Id": "5ecbdb7a-7701-4417-baa1-626ec0ce21f4",
+          "Name": "Shitbox",
+          "Position": "0,0,32",
+          "Tags": "playerhitbox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "30,30,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+          "Name": "Camera",
+          "Position": "-320,96.00001,32",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90.94,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 1
+            },
+            {
+              "__type": "Pixelate",
+              "__enabled": true,
+              "Scale": 0.1
+            }
+          ],
+          "Children": [
+            {
+              "Id": "852793f7-6cad-4aac-b222-4c4e3d0c679c",
+              "Name": "WeaponManager",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "AmmoInvComponent",
+                  "__enabled": true
+                },
+                {
+                  "__type": "PlayerWeaponManagerComponent",
+                  "__enabled": true,
+                  "ActiveWeapon": 0
+                }
+              ]
+            },
+            {
+              "Id": "17817f8b-59f0-4b06-9f45-10a329db8d76",
+              "Name": "Hud",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ScreenPanel",
+                  "__enabled": true,
+                  "AutoScreenScale": true,
+                  "Opacity": 1,
+                  "Scale": 1,
+                  "ZIndex": 100
+                },
+                {
+                  "__type": "PlayerHudComponent",
+                  "__enabled": true,
+                  "HealthComp": "8682ba29-494e-495e-97fc-2efd9e61b64c",
+                  "MyStringValue": "Hello World!",
+                  "WeaponManager": "852793f7-6cad-4aac-b222-4c4e3d0c679c"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "98db23c0-cde7-42bf-8173-7cd20cb0b4ac",
+      "Name": "Object",
+      "Position": "64,0,64",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "3bd447ce-2be5-40f4-8d4c-095ca4931128",
+      "Name": "WeaponPickup",
+      "Position": "-64,0,32",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/pistol.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickupComponent",
+          "__enabled": true,
+          "WeaponData": "data/pistol.weapon",
+          "WeaponPrefab": "prefabs/weapons/pistol.prefab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "bef46d18-383b-4b56-9941-46b30845f849",
+      "Name": "WeaponPickup (1)",
+      "Position": "-64,-96,32",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickupComponent",
+          "__enabled": true,
+          "WeaponData": "data/rifle.weapon",
+          "WeaponPrefab": "prefabs/weapons/rifle.prefab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "951edfc4-3913-4fd5-84d3-3dcf69db71de",
+      "Name": "Enemy",
+      "Position": "-0,-384,-0.0000143391",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "HealthComponent",
+          "__enabled": true,
+          "Armour": 0,
+          "Health": 20,
+          "HurtSound": "sounds/soundboard/half-life-2-death-sound.sound"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "d14ec8a5-830a-481e-82e6-c06d28bcf76e",
+          "Name": "Body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "d2a88c6b-f168-46c6-9c36-bd9bc6a607ba",
+          "Name": "Hitbox",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelHitboxes",
+              "__enabled": true,
+              "Renderer": "d14ec8a5-830a-481e-82e6-c06d28bcf76e",
+              "Target": "951edfc4-3913-4fd5-84d3-3dcf69db71de"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "minimal",
+  "Description": "",
+  "__references": [
+    "facepunch.w_mp5"
+  ]
+}

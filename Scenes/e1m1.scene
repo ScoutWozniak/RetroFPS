@@ -1,0 +1,954 @@
+{
+  "GameObjects": [
+    {
+      "Id": "6651570c-4ebe-4249-a559-63a3044781d7",
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": false,
+          "MapName": "e1m1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "ca8faf3c-25bc-4869-806c-57a5d56f3d45",
+      "Name": "Player",
+      "Position": "0,0,64",
+      "Rotation": "0,0,1,-0.0000006397578",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "playerhitbox,trigger",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "HealthComponent",
+          "__enabled": true,
+          "Armour": 0,
+          "Health": 100,
+          "HurtSound": null
+        },
+        {
+          "__type": "KeyInvComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "PlayerController",
+          "__enabled": true,
+          "Eye": "455d6886-d8d1-44cd-900d-29314c229c58",
+          "Gravity": "0,0,800",
+          "HeadbobAmmount": 5,
+          "HeadbobSpeed": 5,
+          "RunSpeed": 420,
+          "WalkSpeed": 110
+        },
+        {
+          "__type": "ScreenShakeComponent",
+          "__enabled": true,
+          "DecreaseFactor": 1,
+          "eye": "455d6886-d8d1-44cd-900d-29314c229c58",
+          "Shake": 0,
+          "ShakeAmount": 0.7
+        }
+      ],
+      "Children": [
+        {
+          "Id": "455d6886-d8d1-44cd-900d-29314c229c58",
+          "Name": "Eye",
+          "Position": "0,0,64",
+          "Enabled": true
+        },
+        {
+          "Id": "97c99e8f-7eda-4881-8ffc-cf15bcd0120c",
+          "Name": "Shitbox",
+          "Position": "0,0,32",
+          "Tags": "playerhitbox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "30,30,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "df7e66b6-8501-44d3-968e-4d864dc859e5",
+          "Name": "Camera",
+          "Position": "-320,96.00001,32",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90.94,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 1
+            },
+            {
+              "__type": "Pixelate",
+              "__enabled": true,
+              "Scale": 0.05
+            },
+            {
+              "__type": "ChromaticAberration",
+              "__enabled": true,
+              "Offset": "4,6,0",
+              "Scale": 0.10000002
+            },
+            {
+              "__type": "Bloom",
+              "__enabled": true,
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 1.53,
+              "Threshold": 0.5,
+              "ThresholdWidth": 0
+            }
+          ],
+          "Children": [
+            {
+              "Id": "e76803b7-c605-4a96-b7e6-985875c5f64e",
+              "Name": "WeaponManager",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "AmmoInvComponent",
+                  "__enabled": true
+                },
+                {
+                  "__type": "PlayerWeaponManagerComponent",
+                  "__enabled": true,
+                  "ActiveWeapon": 0
+                }
+              ]
+            },
+            {
+              "Id": "91f5cc0a-f934-4232-acc4-3d7f6d48d5cb",
+              "Name": "Hud",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ScreenPanel",
+                  "__enabled": true,
+                  "AutoScreenScale": true,
+                  "Opacity": 1,
+                  "Scale": 1,
+                  "ZIndex": 100
+                },
+                {
+                  "__type": "PlayerHudComponent",
+                  "__enabled": true,
+                  "HealthComp": "ca8faf3c-25bc-4869-806c-57a5d56f3d45",
+                  "MyStringValue": "Hello World!",
+                  "WeaponManager": "e76803b7-c605-4a96-b7e6-985875c5f64e"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e212f7b5-6956-441d-a8b8-853f8b04fdf7",
+      "Name": "Point Light",
+      "Position": "-256,0,192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "4c4cc234-4a46-4242-9cc2-0356100a3279",
+      "Name": "Point Light (1)",
+      "Position": "32,-0.00001369129,96",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "4aed87d5-ab85-4807-ac8c-31eb4d93b5ca",
+      "Name": "Point Light (2)",
+      "Position": "-256,384,128",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "f74f02d5-447a-479e-9b66-5842a43cfe6d",
+      "Name": "Point Light (3)",
+      "Position": "-1216,96.00001,160",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 1000
+        }
+      ]
+    },
+    {
+      "Id": "b30f700b-260a-4b03-901e-a786d3f669ac",
+      "Name": "Point Light (4)",
+      "Position": "-832,95.99995,64",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 1000
+        }
+      ]
+    },
+    {
+      "Id": "aaa99d50-4870-4471-9fe5-6aa6c58a8e52",
+      "Name": "Point Light (5)",
+      "Position": "-1536,95.99997,160",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 1000
+        }
+      ]
+    },
+    {
+      "Id": "9e1ad321-1ad6-4852-ae0f-3f9a74aba2c0",
+      "Name": "Point Light (6)",
+      "Position": "-1184,-384,64",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.5607,0.27164,0.80693,1",
+          "Radius": 100
+        }
+      ]
+    },
+    {
+      "Id": "37fbf717-262b-4a02-ba4a-89509236d082",
+      "Name": "WeaponPickup",
+      "Position": "-384,0,32",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/pistol.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickupComponent",
+          "__enabled": true,
+          "WeaponData": "data/pistol.weapon",
+          "WeaponPrefab": "prefabs/weapons/pistol.prefab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "993e154a-7bb1-451d-9235-20f99fe39c5a",
+      "Name": "WeaponPickup (1)",
+      "Position": "-320,160,32",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickupComponent",
+          "__enabled": true,
+          "WeaponData": "data/rifle.weapon",
+          "WeaponPrefab": "prefabs/weapons/rifle.prefab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "ef72d5a0-a32a-434a-bcd6-cd9d0eeb5dc2",
+      "Name": "PurpleKey",
+      "Position": "-1184,-384,64",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "Off",
+          "Tint": "0.44837,0.24581,0.84158,1"
+        },
+        {
+          "__type": "WeaponPickupComponent",
+          "__enabled": false,
+          "WeaponData": "data/pistol.weapon",
+          "WeaponPrefab": "prefabs/weapons/pistol.prefab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "KeyPickupComponent",
+          "__enabled": true,
+          "KeyType": "PurpleKey"
+        }
+      ]
+    },
+    {
+      "Id": "5097d7c9-5d12-42c2-a776-37bfaccde750",
+      "Name": "keydoor",
+      "Position": "-256,288,128",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": "purple",
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "256,32,256",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "KeyNeeded": "PurpleKey",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 2,
+          "Opened": false
+        }
+      ]
+    },
+    {
+      "Id": "280723d1-181b-4d45-93b6-1744d499fd7f",
+      "Name": "Panel01",
+      "Position": "-1184,-512,-32",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,375,25",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "KeyNeeded": "None",
+          "MoveDir": "0,1,0",
+          "MoveLength": 352,
+          "MoveSpeed": 4,
+          "Opened": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "39a66c38-e70f-46c3-aea3-1c1d5b369238",
+          "Name": "Model",
+          "Position": "0,0,0",
+          "Scale": "2,7.5,0.5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "429be383-9384-4392-9f28-b0e0eea243c4",
+      "Name": "Button",
+      "Position": "-1237.042,529.6387,73.12726",
+      "Rotation": "0.00000004183132,0.0000000003108802,0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "8,32,32",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "ToTrigger": [
+            "280723d1-181b-4d45-93b6-1744d499fd7f",
+            "8be67f8d-10e1-40f8-a5d7-68a865f237f3"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8be67f8d-10e1-40f8-a5d7-68a865f237f3",
+      "Name": "KeyDoorBlocker",
+      "Position": "-1184,-336,80",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "128,12.5,128",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 1,
+          "Opened": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "f7b1aabc-d750-4e56-a5b4-db959448b7dd",
+          "Name": "Object",
+          "Position": "48,0,0",
+          "Scale": "0.25,0.25,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "2350adfb-d156-49b6-8eae-53b44efb005a",
+          "Name": "Object (1)",
+          "Position": "16,0,0",
+          "Scale": "0.25,0.25,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "8c297fb7-260d-4b65-9f31-0b467e52d4b4",
+          "Name": "Object (1)",
+          "Position": "-16,0,0",
+          "Scale": "0.25,0.25,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "981d302f-c4d8-44d1-9380-169d060dadfd",
+          "Name": "Object (1)",
+          "Position": "-48,0,0",
+          "Scale": "0.25,0.25,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0b290256-cb3b-4ca5-a4dc-4a92143176b3",
+      "Name": "Point Light",
+      "Position": "-2403.08,473.9459,223.2245",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 2150.099
+        }
+      ]
+    },
+    {
+      "Id": "811cb00f-b994-40f5-8d6a-29bc3f3b9217",
+      "Name": "Point Light",
+      "Position": "-1726.275,1183.997,139.9417",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 494.50003
+        }
+      ]
+    },
+    {
+      "Id": "d4b2d686-d33f-47ae-a179-b7d9956eb0bb",
+      "Name": "Point Light (7)",
+      "Position": "-1355.215,1512.901,109.4753",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91089,0.11273,0.11273,1",
+          "Radius": 280.5001
+        }
+      ]
+    },
+    {
+      "Id": "15a0c5e0-b2a5-4b43-9a13-1513bee8c1c9",
+      "Name": "Point Light",
+      "Position": "-1240.398,682.3789,132.4768",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.26718,0.6651,0.78218,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "a116fc06-505e-4e35-a3e2-61b27dee84ca",
+      "Name": "Point Light (8)",
+      "Position": "-1240.398,1204.225,132.4768",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.0495,0.0495,0.0495,1",
+          "Radius": 173.50002
+        }
+      ]
+    },
+    {
+      "Id": "fb3171d4-ed83-436d-bc55-0ba7eafcf24a",
+      "Name": "BarDoor",
+      "Position": "-1696,96,144",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/bardoors.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "32,200,224",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 1,
+          "Opened": false
+        }
+      ]
+    },
+    {
+      "Id": "578f7530-7571-486f-a506-6e5a92eddaa3",
+      "Name": "BarDoorButton",
+      "Position": "-814.207,508.938,60.38083",
+      "Rotation": "-0.00000004696128,-0.000000006308619,-0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "ToTrigger": [
+            "fb3171d4-ed83-436d-bc55-0ba7eafcf24a"
+          ]
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "8,32,32",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "306e6168-a692-4313-bdf8-10065bcf93e0",
+      "Name": "crate",
+      "Position": "-1600,288,80.00003",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "d54cd84a-ad55-4008-84bd-099b7e5b7533",
+      "Name": "crate (1)",
+      "Position": "-1568,-64,80.00006",
+      "Rotation": "0.00000002492795,0.0000000000000001642319,0.4182217,0.9083458",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "ad20c294-da2d-4bc4-9696-d1258fb1be04",
+      "Name": "crate",
+      "Position": "-960,-256,47.99992",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "79997f9b-3f66-49d5-bc00-74cde43ee9ab",
+      "Name": "crate",
+      "Position": "-2368,192,80.00002",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "8f46a724-7324-4b26-9d3d-6c5c20db8f87",
+      "Name": "crate (2)",
+      "Position": "-2240,176,80.00002",
+      "Rotation": "-0.00000001530697,-0.0000000000000004682089,-0.2568083,0.9664626",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "d59ffbaf-2f54-4b63-83d8-183db907e107",
+      "Name": "Point Light",
+      "Position": "-1178.751,99.97099,-144.8415",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "e1m1",
+  "Description": "",
+  "__references": [
+    "facepunch.w_mp5"
+  ]
+}

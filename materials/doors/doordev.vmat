@@ -1,0 +1,11 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/retropixel.shader"
+
+	Texture "materials/doors/doordev.png"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

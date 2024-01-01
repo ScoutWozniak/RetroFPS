@@ -1,0 +1,24 @@
+{
+  "RootObject": {
+    "Id": "d6807bdb-09d8-4d2b-859e-29c1ee9d112a",
+    "Name": "firelight",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "PointLight",
+        "__enabled": true,
+        "LightColor": "0.9703,0.50158,0.39869,1",
+        "Radius": 400
+      },
+      {
+        "__type": "DestroyAfterComponent",
+        "__enabled": true,
+        "Seconds": 0.25
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
