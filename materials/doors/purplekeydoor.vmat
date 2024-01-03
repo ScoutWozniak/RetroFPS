@@ -4,7 +4,8 @@ Layer0
 {
 	shader "materials/shaders/retropixel.shader"
 
-	Texture "materials/doors/purplekeydoor.png"
+	//---- Color ----
+	Color "materials/doors/purplekeydoor.png"
 
 	//---- Fog ----
 	g_bFogEnabled "1"

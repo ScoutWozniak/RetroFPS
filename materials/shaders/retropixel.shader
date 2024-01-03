@@ -70,8 +70,8 @@ PS
 	#include "common/pixel.hlsl"
 	
 	SamplerState g_sSampler0 < Filter( POINT ); AddressU( WRAP ); AddressV( WRAP ); >;
-	CreateInputTexture2D( Texture, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	Texture2D g_tTexture < Channel( RGBA, Box( Texture ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	CreateInputTexture2D( Color, Srgb, 8, "None", "_color", "Color,0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	Texture2D g_tColor < Channel( RGBA, Box( Color ), Srgb ); OutputFormat( BC7 ); SrgbRead( True ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
@@ -86,7 +86,7 @@ PS
 		m.Emission = float3( 0, 0, 0 );
 		m.Transmission = 0;
 		
-		float4 l_0 = Tex2DS( g_tTexture, g_sSampler0, i.vTextureCoords.xy );
+		float4 l_0 = Tex2DS( g_tColor, g_sSampler0, i.vTextureCoords.xy );
 		
 		m.Albedo = l_0.xyz;
 		m.Opacity = 1;

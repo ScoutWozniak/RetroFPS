@@ -1,5 +1,6 @@
 using Sandbox;
 using Sandbox.Utility;
+using System.Threading;
 using System.Threading.Tasks;
 
 public sealed class DoorComponent : Component, IUsable
@@ -14,21 +15,42 @@ public sealed class DoorComponent : Component, IUsable
 
 	[Property] KeyTypes KeyNeeded { get;set; }
 
-	public void OnUse()
+	Vector3 OriginalPos { get;set; }
+
+	[Property] bool CloseAfterOpen { get;set; }
+	[Property] float CloseAfter { get;set; }
+
+	// HACK
+	int curOpen { get; set; }
+
+	public void OnUse(bool value, GameObject go )
 	{
-		//Transform.Position = Transform.Position + MoveDir * MoveLength;
-		if ( KeyNeeded != KeyTypes.None && !Scene.Components.Get<KeyInvComponent>( FindMode.InDescendants ).HasKeyType( KeyNeeded ) )
-		{
-			Scene.Components.Get<PlayerHudComponent>( FindMode.InDescendants ).AddText( "You need the " + KeyTypes.PurpleKey.ToString() );
-			return;
-		}
-		Opened = true;
-		_ = LerpPosition( MoveSpeed, Transform.Position + MoveDir * MoveLength, Easing.EaseOut );
+		if(value)
+			OpenDoor();
+		else
+			CloseDoor();
 	}
 
-	protected override void OnUpdate()
+	void OpenDoor()
 	{
+		if ( HasKey() )
+		{
+			Opened = true;
+			_ = LerpPosition( MoveSpeed, OriginalPos + MoveDir * MoveLength, Easing.EaseOut );
+			curOpen++;
+		}
+	}
 
+	void CloseDoor()
+	{
+		Opened = false;
+		_ = LerpPosition( MoveSpeed, OriginalPos, Easing.EaseOut );
+	}
+
+	protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		OriginalPos = Transform.Position;
 	}
 
 	async Task LerpPosition(float seconds, Vector3 to, Easing.Function easer)
@@ -43,5 +65,27 @@ public sealed class DoorComponent : Component, IUsable
 			
 			await Task.Frame();
 		}
+
+		if (CloseAfterOpen)
+			_ = CloseAfterSec(curOpen);
+	}
+
+	async Task CloseAfterSec(int _curOpen)
+	{
+		await Task.DelaySeconds( CloseAfter );
+		if (Opened && curOpen == _curOpen )
+		{
+			_ = LerpPosition( MoveSpeed, OriginalPos, Easing.EaseOut );
+		}
+	}
+
+	bool HasKey()
+	{
+		if ( KeyNeeded != KeyTypes.None && !Scene.Components.Get<KeyInvComponent>( FindMode.InDescendants ).HasKeyType( KeyNeeded ) )
+		{
+			Scene.Components.Get<PlayerHudComponent>( FindMode.InDescendants ).AddText( "You need the " + KeyTypes.PurpleKey.ToString() );
+			return false;
+		}
+		return true;
 	}
 }

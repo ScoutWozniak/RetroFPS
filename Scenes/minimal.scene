@@ -134,12 +134,14 @@
           "__type": "HealthComponent",
           "__enabled": true,
           "Armour": 0,
+          "DeathSound": null,
           "Health": 100,
           "HurtSound": null
         },
         {
           "__type": "PlayerController",
           "__enabled": true,
+          "AirSpeed": 110,
           "Eye": "7f674d3a-74d2-46bb-80be-9afdb1d7cc05",
           "Gravity": "0,0,800",
           "HeadbobAmmount": 5,
@@ -267,76 +269,6 @@
       ]
     },
     {
-      "Id": "3bd447ce-2be5-40f4-8d4c-095ca4931128",
-      "Name": "WeaponPickup",
-      "Position": "-64,0,32",
-      "Scale": "2,2,2",
-      "Tags": "trigger",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/pistol.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "WeaponPickupComponent",
-          "__enabled": true,
-          "WeaponData": "data/pistol.weapon",
-          "WeaponPrefab": "prefabs/weapons/pistol.prefab"
-        },
-        {
-          "__type": "BoxCollider",
-          "__enabled": true,
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "10,10,10",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "bef46d18-383b-4b56-9941-46b30845f849",
-      "Name": "WeaponPickup (1)",
-      "Position": "-64,-96,32",
-      "Scale": "2,2,2",
-      "Tags": "trigger",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "WeaponPickupComponent",
-          "__enabled": true,
-          "WeaponData": "data/rifle.weapon",
-          "WeaponPrefab": "prefabs/weapons/rifle.prefab"
-        },
-        {
-          "__type": "BoxCollider",
-          "__enabled": true,
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "10,10,10",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "951edfc4-3913-4fd5-84d3-3dcf69db71de",
       "Name": "Enemy",
       "Position": "-0,-384,-0.0000143391",
@@ -346,6 +278,7 @@
           "__type": "HealthComponent",
           "__enabled": true,
           "Armour": 0,
+          "DeathSound": null,
           "Health": 20,
           "HurtSound": "sounds/soundboard/half-life-2-death-sound.sound"
         }
@@ -399,7 +332,5 @@
   },
   "Title": "minimal",
   "Description": "",
-  "__references": [
-    "facepunch.w_mp5"
-  ]
+  "__references": []
 }

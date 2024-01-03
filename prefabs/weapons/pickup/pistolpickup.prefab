@@ -1,0 +1,45 @@
+{
+  "RootObject": {
+    "Id": "37fbf717-262b-4a02-ba4a-89509236d082",
+    "Name": "pistolpickup",
+    "Scale": "2,2,2",
+    "Tags": "trigger",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/pistol.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "WeaponPickupComponent",
+        "__enabled": true,
+        "WeaponData": "data/pistol.weapon",
+        "WeaponPrefab": "prefabs/weapons/pistol.prefab"
+      },
+      {
+        "__type": "BoxCollider",
+        "__enabled": true,
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "20,20,20",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ItemPickupComponent",
+        "__enabled": true,
+        "Rotate": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

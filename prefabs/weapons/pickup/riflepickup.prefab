@@ -1,0 +1,48 @@
+{
+  "RootObject": {
+    "Id": "993e154a-7bb1-451d-9235-20f99fe39c5a",
+    "Name": "RiflePickup",
+    "Position": "-320,160,32",
+    "Scale": "2,2,2",
+    "Tags": "trigger",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "WeaponPickupComponent",
+        "__enabled": true,
+        "WeaponData": "data/rifle.weapon",
+        "WeaponPrefab": "prefabs/weapons/rifle.prefab"
+      },
+      {
+        "__type": "BoxCollider",
+        "__enabled": true,
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "20,20,20",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ItemPickupComponent",
+        "__enabled": true,
+        "Rotate": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.w_mp5"
+  ]
+}

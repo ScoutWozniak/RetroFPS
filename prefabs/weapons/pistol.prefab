@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "36ebcc37-f4f1-49f4-a44f-cdf454a3470e",
+    "Id": "7fe8b899-7ede-4708-be94-fdf175ac3ed6",
     "Name": "pistol",
     "Tags": "viewmodel",
     "Enabled": true,
@@ -15,33 +15,43 @@
         "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
         "HitParticles": "prefabs/particles/hitparticles.prefab",
         "InputType": "Pressed",
-        "Viewmodel": "fa6372c9-e5c6-4709-9d71-46c5f10a1d01"
+        "Viewmodel": "362e0201-772e-4b6e-946c-17e27ee02c6b"
       }
     ],
     "Children": [
       {
-        "Id": "fa6372c9-e5c6-4709-9d71-46c5f10a1d01",
-        "Name": "Viewmodel",
-        "Position": "18.35507,-6.055283,-8.462614",
-        "Rotation": "-0.00000003989908,-0.000000001021777,-0.6503825,0.759607",
+        "Id": "362e0201-772e-4b6e-946c-17e27ee02c6b",
+        "Name": "Holder",
         "Enabled": true,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
-            "__enabled": true,
-            "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/pistol.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
             "__type": "ViewmodelComponent",
             "__enabled": true,
-            "FireGraphValue": "b_fire"
+            "FireGraphValue": "b_fire",
+            "Renderer": "53ec4759-270f-4c2d-8ed4-36f3505d454c"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "53ec4759-270f-4c2d-8ed4-36f3505d454c",
+            "Name": "Viewmodel",
+            "Position": "18.35507,-6.055283,-8.462614",
+            "Rotation": "-0.00000003989908,-0.000000001021777,-0.6503825,0.759607",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": null,
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/pistol.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
           }
         ]
       }

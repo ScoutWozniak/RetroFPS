@@ -10,7 +10,7 @@
       "DefaultMetalness": 0,
       "DefaultAmbientOcclusion": 0,
       "Identifier": "0",
-      "Position": "0,0",
+      "Position": "736,496",
       "Albedo": {
         "Identifier": "1",
         "Output": "Result"
@@ -18,18 +18,22 @@
     },
     {
       "_class": "TextureSampler",
-      "Image": "materials/floordev.png",
+      "Image": "materials/dev/white_color.tga",
       "Sampler": {
         "Filter": "Point"
       },
       "UI": {
-        "Name": "Texture",
+        "Name": "Color",
         "Default": "1,1,1,1",
+        "ImageFormat": "BC7",
         "SrgbRead": true,
+        "PrimaryGroup": {
+          "Name": "Color"
+        },
         "CreateInput": "CreateInputTexture2D"
       },
       "Identifier": "1",
-      "Position": "-512,-48"
+      "Position": "-0,448"
     }
   ]
 }

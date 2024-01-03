@@ -7,7 +7,8 @@ Layer0
 	//---- Texture Filtering ----
 	F_TEXTURE_FILTERING 4 // Nearest Neighbour
 
-	Texture "materials/57.jpg"
+	//---- Color ----
+	Color "materials/57.jpg"
 
 	//---- Fog ----
 	g_bFogEnabled "1"

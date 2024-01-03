@@ -3,18 +3,16 @@ using Sandbox;
 public sealed class ViewmodelComponent : Component
 {
 	[Property] string FireGraphValue { get; set; }
-	protected override void OnStart()
+	[Property] SkinnedModelRenderer Renderer { get; set; }
+	protected override void OnUpdate()
 	{
-		base.OnStart();
-	}
-
-	protected override void OnEnabled()
-	{
-		base.OnEnabled();
+		base.OnUpdate();
+		Transform.Position = Scene.Components.Get<CameraComponent>(FindMode.EverythingInDescendants).Transform.Position;
+		Transform.Rotation = Scene.Components.Get<CameraComponent>(FindMode.EverythingInDescendants).Transform.Rotation;
 	}
 
 	public void FireEffects()
 	{
-		GameObject.Components.Get<SkinnedModelRenderer>().Set( FireGraphValue, true );
+		Renderer.Set( FireGraphValue, true );
 	}
 }

@@ -1,0 +1,892 @@
+{
+  "GameObjects": [
+    {
+      "Id": "cd3ad37e-8728-4070-ad65-f03a7a067ecc",
+      "Name": "Player",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "playerhitbox,trigger,player",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "HealthComponent",
+          "__enabled": true,
+          "Armour": 0,
+          "Health": 100,
+          "HurtSound": null,
+          "RemoveOnDeath": false
+        },
+        {
+          "__type": "KeyInvComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "ScreenShakeComponent",
+          "__enabled": true,
+          "DecreaseFactor": 1,
+          "eye": "9ebe36cc-1e26-42f8-b6ca-7a08493a813f",
+          "Shake": 0,
+          "ShakeAmount": 0.7
+        },
+        {
+          "__type": "PlayerController",
+          "__enabled": true,
+          "AirSpeed": 60,
+          "Eye": "9ebe36cc-1e26-42f8-b6ca-7a08493a813f",
+          "Gravity": "0,0,1600",
+          "HeadbobAmmount": 5,
+          "HeadbobSpeed": 5,
+          "RunSpeed": 220,
+          "WalkSpeed": 110
+        },
+        {
+          "__type": "PlayerWeaponManagerComponent",
+          "__enabled": true,
+          "ActiveWeapon": 0
+        }
+      ],
+      "Children": [
+        {
+          "Id": "9ebe36cc-1e26-42f8-b6ca-7a08493a813f",
+          "Name": "Eye",
+          "Position": "0,0,64",
+          "Enabled": true
+        },
+        {
+          "Id": "f4e02850-ab1c-4ec0-b798-d337688bae9f",
+          "Name": "Shitbox",
+          "Position": "0,0,32",
+          "Tags": "playerhitbox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "30,30,64",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "85427b4a-1296-4bb9-b160-4a3bea29bf7f",
+          "Name": "Camera",
+          "Position": "-320,96.00001,32",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90.94,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 1
+            },
+            {
+              "__type": "Pixelate",
+              "__enabled": true,
+              "Scale": 0.05
+            },
+            {
+              "__type": "ChromaticAberration",
+              "__enabled": true,
+              "Offset": "4,6,0",
+              "Scale": 0.10000002
+            },
+            {
+              "__type": "Bloom",
+              "__enabled": true,
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 1.53,
+              "Threshold": 0.5,
+              "ThresholdWidth": 0
+            }
+          ],
+          "Children": [
+            {
+              "Id": "90949b4e-1ba8-4e32-bb42-a36f9a514fa9",
+              "Name": "Hud",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ScreenPanel",
+                  "__enabled": true,
+                  "AutoScreenScale": true,
+                  "Opacity": 1,
+                  "Scale": 1,
+                  "ZIndex": 100
+                },
+                {
+                  "__type": "PlayerHudComponent",
+                  "__enabled": true,
+                  "HealthComp": "cd3ad37e-8728-4070-ad65-f03a7a067ecc",
+                  "MyStringValue": "Hello World!",
+                  "WeaponManager": "cd3ad37e-8728-4070-ad65-f03a7a067ecc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "045598df-28a6-4a23-9697-756235b880c7",
+      "Name": "Button",
+      "Position": "-32,256,63.99999",
+      "Rotation": "-0.00000004696128,-0.000000006308619,-0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "ToTrigger": [],
+          "TriggerOnce": true
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "8,32,32",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "fa10ca6b-6eb2-4577-910c-504c12108c03",
+      "Name": "Button (1)",
+      "Position": "-640,256,64.00003",
+      "Rotation": "-0.00000004696128,-0.000000006308619,-0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "ToTrigger": [
+            "65fecaee-d0ee-4c8e-b7a2-3a9e3e811a75"
+          ],
+          "TriggerOnce": false
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "8,32,32",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "5871f565-3c8a-40ec-b1ee-1780cfe13526",
+      "Name": "Button (2)",
+      "Position": "-736,256.0001,64.00004",
+      "Rotation": "-0.00000004696128,-0.000000006308619,-0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "ToTrigger": [
+            "aba0db00-801a-47b8-b5fa-bb19578ebaa5"
+          ],
+          "TriggerOnce": true
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "8,32,32",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "4fa30b30-aec6-42b8-b25a-472335da7879",
+      "Name": "keydoor",
+      "Position": "-192,256,128",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": "default",
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "256,32,256",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "CloseAfter": 5,
+          "CloseAfterOpen": false,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 0.25,
+          "Opened": false
+        }
+      ]
+    },
+    {
+      "Id": "9edca7a9-fff0-456d-8d0e-b87dba4462e1",
+      "Name": "keydoor (1)",
+      "Position": "-832,-320,128",
+      "Rotation": "0.00000004455048,-0.000000002715641,0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": "purple",
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "256,32,256",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        },
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "CloseAfter": 2,
+          "CloseAfterOpen": false,
+          "KeyNeeded": "PurpleKey",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 0.25,
+          "Opened": false
+        }
+      ]
+    },
+    {
+      "Id": "6b443f3a-8b04-444c-a659-99d84f3d1057",
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": false,
+          "MapName": "itemtest",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "90702d76-28f7-4654-a6a4-31393b12a49e",
+      "Name": "Sun",
+      "Position": "451.0259,45.08485,342.372",
+      "Rotation": "-0.1408644,0.5782043,-0.1902222,0.7808027",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.4901,0.30575,0.17226,1",
+          "Shadows": true,
+          "SkyColor": "0.74522,0.80288,0.83168,1"
+        }
+      ]
+    },
+    {
+      "Id": "f165ba6f-07d1-4b86-b82d-a6cfab81d6a4",
+      "Name": "Point Light",
+      "Position": "-512,0,348.1517",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.58911,0.41273,0.26247,1",
+          "Radius": 20000
+        }
+      ]
+    },
+    {
+      "Id": "df8abe65-40bb-47da-8e28-8a9494a91183",
+      "Name": "Point Light (1)",
+      "Position": "320,0,348.1517",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.58911,0.41273,0.26247,1",
+          "Radius": 20000
+        }
+      ]
+    },
+    {
+      "Id": "5cb08796-16a2-4080-8142-4f4f9289da1b",
+      "Name": "WeaponPickup",
+      "Position": "192,-512,31.99979",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/pickup/pistolpickup.prefab"
+    },
+    {
+      "Id": "efcc63fc-5d98-4e15-aebf-eb575e7c80ad",
+      "Name": "WeaponPickup (1)",
+      "Position": "192,-448,31.99979",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/pickup/pistolpickup.prefab"
+    },
+    {
+      "Id": "89c19c76-d901-4283-bb32-766bf9accd5e",
+      "Name": "RiflePickup",
+      "Position": "192,-384,31.99979",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/pickup/riflepickup.prefab"
+    },
+    {
+      "Id": "0b6e9e4d-ab44-4680-9fdf-01ed54b14b2f",
+      "Name": "RiflePickup (1)",
+      "Position": "192,-320,31.99979",
+      "Scale": "2,2,2",
+      "Tags": "trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/pickup/riflepickup.prefab"
+    },
+    {
+      "Id": "0be7b267-38f6-462a-96fc-11396f334967",
+      "Name": "Object",
+      "Position": "0,0,288",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-1024,-1024,-1024",
+            "Maxs": "1024,1024,1024"
+          },
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "ad0b3f0e-c817-47a3-9549-8ef684fb8a03",
+      "Name": "Wind",
+      "Position": "-256.0001,-64,320",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SoundPointComponent",
+          "__enabled": true,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "Repeat": false,
+          "SoundEvent": "sounds/world/ambience/ambience.wind.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "Id": "65fecaee-d0ee-4c8e-b7a2-3a9e3e811a75",
+      "Name": "Point Light",
+      "Position": "-640,352,96",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        },
+        {
+          "__type": "LightToggleComponent",
+          "__enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "5c4ea64a-84cf-46e3-8bd4-529a30fd4804",
+      "Name": "TriggerTest",
+      "Position": "-192,256,63.99993",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "200,200,100",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "TriggerComponent",
+          "__enabled": true,
+          "Style": "Both",
+          "ToTrigger": [
+            "4fa30b30-aec6-42b8-b25a-472335da7879"
+          ],
+          "TriggerOnce": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "bbb1fee2-b209-4871-a43b-6b04ee958900",
+          "Name": "Cube",
+          "Position": "0,0,0",
+          "Scale": "4,4,2",
+          "Tags": "trigger",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/tools/toolstrigger.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,0.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "97b858b7-dbbd-4de0-b980-66704541f407",
+      "Name": "TriggerHurt",
+      "Position": "480,256,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "200,200,100",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "TriggerComponent",
+          "__enabled": true,
+          "Style": "OnEnter",
+          "ToTrigger": [
+            "97b858b7-dbbd-4de0-b980-66704541f407"
+          ],
+          "TriggerOnce": false
+        },
+        {
+          "__type": "HurtObjectComponent",
+          "__enabled": true
+        }
+      ],
+      "Children": [
+        {
+          "Id": "5baa02d1-ec53-4001-897a-5caa7671b1f9",
+          "Name": "Cube",
+          "Position": "0,0,32",
+          "Scale": "4,4,2",
+          "Tags": "trigger",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/tools/toolstrigger.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "1,1,1,0.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "aba0db00-801a-47b8-b5fa-bb19578ebaa5",
+      "Name": "TextToggle",
+      "Position": "-791.0628,263.0349,32.00003",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextPrintComponent",
+          "__enabled": true,
+          "PrintOnce": false,
+          "Text": "AAAAAAAAAAAA text is printed"
+        }
+      ]
+    },
+    {
+      "Id": "2d73ce22-e7fc-4570-b752-15819f89c510",
+      "Name": "Text",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "c1f2c92c-8aba-4365-bd62-8091dbd3b1ea",
+          "Name": "Object",
+          "Position": "-314.1313,174.7838,121.0452",
+          "Rotation": "0.00000004921738,0.000000000000001995287,0.8257306,0.5640647",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 32,
+              "Scale": 0.45,
+              "Text": "Triggers"
+            }
+          ]
+        },
+        {
+          "Id": "be83e57b-70e6-43ba-9651-80046dc30b1b",
+          "Name": "breakable",
+          "Position": "128,352,96",
+          "Rotation": "0.00000004419056,0.000000000000001283151,0.7413946,0.6710694",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 32,
+              "Scale": 0.45,
+              "Text": "func_breakable"
+            }
+          ]
+        },
+        {
+          "Id": "a92c7eb7-dfba-4f71-a15a-9feed91e2181",
+          "Name": "breakable",
+          "Position": "512,192,160",
+          "Rotation": "0.00000004419056,0.000000000000001283151,0.7413946,0.6710694",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 32,
+              "Scale": 0.45,
+              "Text": "hurt trigger"
+            }
+          ]
+        },
+        {
+          "Id": "bdb310bd-8b0b-4199-bb7f-56a012579353",
+          "Name": "Object (1)",
+          "Position": "-629.8226,255.1986,32.00007",
+          "Rotation": "0.00000004282496,0.0000000000000009346858,0.7184836,0.6955447",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 32,
+              "Scale": 0.17,
+              "Text": "Lightswitch \u002B Toggle Buttons"
+            }
+          ]
+        },
+        {
+          "Id": "4ebb5590-8ace-4873-beb7-1ef918131a52",
+          "Name": "Object (1)",
+          "Position": "-736,256,32.00007",
+          "Rotation": "0.00000004282496,0.0000000000000009346858,0.7184836,0.6955447",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 32,
+              "Scale": 0.17,
+              "Text": "Text Print"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b4dd821c-e66f-4c0c-8a1d-849ef9788d67",
+      "Name": "Object",
+      "Position": "-768,-512,96",
+      "Rotation": "0,0,1,-0.0000006397578",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__enabled": true,
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 32,
+          "Scale": 0.41,
+          "Text": "temp key"
+        }
+      ]
+    },
+    {
+      "Id": "4a469f7a-c4fe-4a9b-b76c-30a288583e19",
+      "Name": "Object",
+      "Position": "-768,-512,32",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ItemPickupComponent",
+          "__enabled": true,
+          "Rotate": true
+        },
+        {
+          "__type": "KeyPickupComponent",
+          "__enabled": true,
+          "KeyType": "PurpleKey"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/doors/purplekeydoor.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "a3b87eed-9957-4e7f-b97c-0676aad0b244",
+      "Name": "Fog",
+      "Position": "0,0,288",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "VolumetricFogVolume",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-1024,-1024,-1024",
+            "Maxs": "1024,1024,1024"
+          },
+          "FalloffExponent": 1,
+          "Strength": 0.1
+        }
+      ]
+    },
+    {
+      "Id": "b38a0435-64a2-47fa-b5d8-b824eef5c180",
+      "Name": "Sky",
+      "Position": "0,0,192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_sunset_light.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "90c50a55-8331-4198-b4c5-646982100ad0",
+      "Name": "DeathTrigger",
+      "Position": "128,288,32",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/devtint.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "HealthComponent",
+          "__enabled": true,
+          "Armour": 0,
+          "Health": 20,
+          "HurtSound": null,
+          "RemoveOnDeath": true
+        },
+        {
+          "__type": "DeathTriggerEvent",
+          "__enabled": true,
+          "ToTrigger": [
+            "4fa30b30-aec6-42b8-b25a-472335da7879"
+          ]
+        },
+        {
+          "__type": "DeathSoundEvent",
+          "__enabled": true,
+          "DeathSound": "sounds/physics/breaking/break_wood_plank.sound"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "itemtest",
+  "Description": "",
+  "__references": []
+}

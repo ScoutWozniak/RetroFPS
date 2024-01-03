@@ -60,7 +60,7 @@
 		}
 	}
 
-	public void AddText(string message)
+	public void AddText(string message, bool playSound = false)
 	{
 		Entries.Clear();
 		message = message.Truncate(300);
@@ -72,6 +72,11 @@
 
 		Entries.Add(new Entry(message, 0.0f));
 		StateHasChanged();
+
+		if (playSound)
+		{
+			Sound.Play("ui.talk");
+		}
 	}
 
 }

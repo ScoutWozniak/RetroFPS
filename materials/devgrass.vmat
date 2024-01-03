@@ -4,7 +4,8 @@ Layer0
 {
 	shader "materials/shaders/retropixel.shader"
 
-	Texture "materials/devgrass.png"
+	//---- Color ----
+	Color "materials/devgrass.png"
 
 	//---- Fog ----
 	g_bFogEnabled "1"

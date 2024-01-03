@@ -21,6 +21,8 @@ public class PlayerController : Component, INetworkSerializable
 	[Category( "Movement" )]
 	[Property] float WalkSpeed { get; set; } = 110.0f;
 
+	[Category( "Movement" )]
+	[Property] float AirSpeed { get; set; } = 110.0f;
 	public Angles EyeAngles;
 	public bool IsRunning;
 
@@ -76,7 +78,7 @@ public class PlayerController : Component, INetworkSerializable
 					var use = tr.GameObject.Components.Get<UsableComponent>();
 					if ( use != null)
 					{
-						use.OnUse();
+						use.OnUse(GameObject);
 					}
 				}
 			}
@@ -88,6 +90,7 @@ public class PlayerController : Component, INetworkSerializable
 	public void OnJump( float floatValue, string dataString, object[] objects, Vector3 position )
 	{
 		//AnimationHelper?.TriggerJump();
+		Sound.Play( "player.jmp", Transform.Position );
 	}
 
 	float fJumps;
@@ -104,11 +107,11 @@ public class PlayerController : Component, INetworkSerializable
 		if ( cc.IsOnGround && Input.Down( "Jump" ) )
 		{
 			float flGroundFactor = 1.0f;
-			float flMul = 268.3281572999747f * 1.2f;
+			float flMul = 268.3281572999747f * 1.20f;
 			//if ( Duck.IsActive )
 			//	flMul *= 0.8f;
 
-			cc.Punch( Vector3.Up * flMul * flGroundFactor );
+			cc.Punch( Vector3.Up * flMul * flGroundFactor + WishVelocity * 0.1f );
 			//	cc.IsOnGround = false;
 
 			OnJump( fJumps, "Hello", new object[] { Time.Now.ToString(), 43.0f }, Vector3.Random );
@@ -119,15 +122,24 @@ public class PlayerController : Component, INetworkSerializable
 
 		if ( cc.IsOnGround )
 		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-			cc.Accelerate( WishVelocity );
+			//cc.Velocity = cc.Velocity.WithZ( 0 );
+			//cc.Accelerate( WishVelocity );
+			//cc.ApplyFriction( 4.0f );
+
 			cc.ApplyFriction( 4.0f );
+			var curSpeed = Vector3.Dot( WishVelocity, cc.Velocity );
+			var addSpeed = Math.Clamp( RunSpeed - curSpeed, 0, RunSpeed * 10.0f );
+			cc.Velocity += addSpeed * WishVelocity;
 		}
 		else
 		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-			cc.Accelerate( WishVelocity.ClampLength( 50 ) );
-			cc.ApplyFriction( 0.1f );
+			//cc.Velocity -= Gravity * Time.Delta * 0.5f;
+			//cc.Accelerate( WishVelocity.ClampLength( 50 ) );
+			//cc.ApplyFriction( 0.1f );
+
+			var curSpeed = Vector3.Dot( WishVelocity, cc.Velocity );
+			var addSpeed = Math.Clamp( AirSpeed - curSpeed, 0, RunSpeed * 10.0f );
+			cc.Velocity += addSpeed * WishVelocity;
 		}
 
 		cc.Move();
@@ -157,8 +169,8 @@ public class PlayerController : Component, INetworkSerializable
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
-		if ( Input.Down( "Run" ) ) WishVelocity *= WalkSpeed;
-		else WishVelocity *= RunSpeed;
+		//if ( Input.Down( "Run" ) ) WishVelocity *= WalkSpeed;
+		//else WishVelocity *= RunSpeed;
 	}
 
 	public void Write( ref ByteStream stream )

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "30d566fc-6ce3-436e-bbf5-7b0867b47d4e",
+    "Id": "374d877c-c006-4e41-8a92-19aeb23868bb",
     "Name": "rifle",
     "Tags": "viewmodel",
     "Enabled": true,
@@ -15,12 +15,12 @@
         "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
         "HitParticles": "prefabs/particles/hitparticles.prefab",
         "InputType": "Down",
-        "Viewmodel": "4200297e-5ce9-43c3-affd-39925c4c1e0d"
+        "Viewmodel": "57d03263-4eaa-4a13-b535-321e6d86ed2b"
       }
     ],
     "Children": [
       {
-        "Id": "4200297e-5ce9-43c3-affd-39925c4c1e0d",
+        "Id": "57d03263-4eaa-4a13-b535-321e6d86ed2b",
         "Name": "Viewmodel",
         "Enabled": true,
         "Components": [
@@ -39,7 +39,8 @@
           {
             "__type": "ViewmodelComponent",
             "__enabled": true,
-            "FireGraphValue": "b_attack"
+            "FireGraphValue": "b_attack",
+            "Renderer": "57d03263-4eaa-4a13-b535-321e6d86ed2b"
           }
         ]
       }
