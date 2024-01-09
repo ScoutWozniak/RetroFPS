@@ -1,26 +1,10 @@
 {
-  "Id": "16389964-c50d-424e-8f79-b9be9ddc46b4",
+  "Id": "edee6d64-ece0-492e-bd9d-d8fc4f5a529b",
   "GameObjects": [
     {
-      "Id": "6651570c-4ebe-4249-a559-63a3044781d7",
-      "Name": "Map",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "MapInstance",
-          "__enabled": true,
-          "MapName": "e1m1",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
-        }
-      ],
-      "Children": []
-    },
-    {
-      "Id": "4bb38350-1573-432f-aca7-504a01791ba0",
+      "Id": "02caaa98-8237-432e-98fa-c7f91bdb2e20",
       "Name": "Player",
-      "Position": "0,0,32",
+      "Position": "-464,-0.000003210396,0",
       "Tags": "playerhitbox",
       "Enabled": true,
       "Components": [
@@ -47,7 +31,7 @@
           "__type": "PlayerController",
           "__enabled": true,
           "AirSpeed": 90,
-          "Eye": "bca3a571-c495-40d1-b05e-21dca2e0b2b4",
+          "Eye": "514d005f-a4ba-4545-aada-495e5de3780b",
           "Gravity": "0,0,1600",
           "HeadbobAmmount": 5,
           "HeadbobSpeed": 5,
@@ -73,16 +57,16 @@
       ],
       "Children": [
         {
-          "Id": "bca3a571-c495-40d1-b05e-21dca2e0b2b4",
+          "Id": "514d005f-a4ba-4545-aada-495e5de3780b",
           "Name": "Eye",
           "Position": "0,0,64",
           "Tags": "playerhitbox",
           "Enabled": true
         },
         {
-          "Id": "a6bf0851-bb91-4898-8444-9dfc300c53c4",
+          "Id": "3c4a9811-6b31-4c61-ad0e-3dbf749cd71f",
           "Name": "Camera",
-          "Position": "-320,96.00001,32",
+          "Position": "0,0,48",
           "Tags": "playerhitbox",
           "Enabled": true,
           "Components": [
@@ -110,13 +94,13 @@
             },
             {
               "__type": "ChromaticAberration",
-              "__enabled": true,
+              "__enabled": false,
               "Offset": "4,6,0",
               "Scale": 0.10000002
             },
             {
               "__type": "Bloom",
-              "__enabled": true,
+              "__enabled": false,
               "BloomColor": {
                 "color": [
                   {
@@ -145,12 +129,12 @@
             },
             {
               "__type": "CamAmbientLightComponent",
-              "__enabled": true
+              "__enabled": false
             }
           ],
           "Children": [
             {
-              "Id": "ef333d25-9224-49c0-b820-5ee1520283dd",
+              "Id": "bf66db95-88a7-4f0b-a034-b362e9d3a71b",
               "Name": "Hud",
               "Position": "0,0,0",
               "Tags": "playerhitbox",
@@ -163,101 +147,52 @@
                   "Opacity": 1,
                   "Scale": 1,
                   "ZIndex": 100
+                },
+                {
+                  "__type": "PlayerHudComponent",
+                  "__enabled": true,
+                  "HealthComp": "02caaa98-8237-432e-98fa-c7f91bdb2e20",
+                  "MyStringValue": "Hello World!",
+                  "WeaponManager": "02caaa98-8237-432e-98fa-c7f91bdb2e20"
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "Id": "95c9242a-b580-41f3-b600-32372cfa6492",
+      "Name": "Plane",
+      "Scale": "10,10,10",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "Id": "ee70a161-4967-4e06-96fd-ee7b1d2d075f",
-          "Name": "HUD",
-          "Position": "0,0,0",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ScreenPanel",
-              "__enabled": true,
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 100
-            },
-            {
-              "__type": "PlayerHudComponent",
-              "__enabled": true,
-              "HealthComp": "4bb38350-1573-432f-aca7-504a01791ba0",
-              "MyStringValue": "Hello World!",
-              "WeaponManager": "4bb38350-1573-432f-aca7-504a01791ba0"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "1f85b84e-2f4a-4cd3-b0ce-9a3b895a1050",
-      "Name": "Point Light",
-      "Position": "480,128,96",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PointLight",
+          "__type": "BoxCollider",
           "__enabled": true,
-          "LightColor": "0.96279,0.40586,0.14778,1",
-          "Radius": 400
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100,1",
+          "Static": false,
+          "Surface": null
         }
       ]
     },
     {
-      "Id": "de68490a-08d6-49fe-98f5-d7bb146d7926",
-      "Name": "Point Light (1)",
-      "Position": "480,-160,96",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PointLight",
-          "__enabled": true,
-          "LightColor": "0.94884,0.39697,0.14122,1",
-          "Radius": 400
-        }
-      ]
-    },
-    {
-      "Id": "a5d164a6-bc7f-46d7-834d-31638599c19c",
-      "Name": "Object",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SkyBox2D",
-          "__enabled": true,
-          "SkyMaterial": "materials/sky/duske_sky.vmat",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "36c8dfcb-a77c-4682-8ae0-919d65c87877",
-      "Name": "Fog",
-      "Position": "64,0,128",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "VolumetricFogVolume",
-          "__enabled": true,
-          "Bounds": {
-            "Mins": "-500,-500,-500",
-            "Maxs": "500,500,500"
-          },
-          "FalloffExponent": 1,
-          "Strength": 1
-        }
-      ]
-    },
-    {
-      "Id": "99e88e51-5f3b-442b-8ed6-ca60f8205186",
+      "Id": "bd0a2e12-b3c5-4e9b-a924-dbcf4a657869",
       "Name": "Sun",
-      "Position": "102.4673,-12.44514,290.4222",
-      "Rotation": "-0.03001446,0.6373703,-0.04342136,0.7687478",
+      "Position": "269.0664,224.4197,296.0437",
+      "Rotation": "0.06482948,0.3696146,0.1601351,0.9129835",
       "Enabled": true,
       "Components": [
         {
@@ -265,29 +200,110 @@
           "__enabled": true,
           "LightColor": "0.91373,0.98039,1,1",
           "Shadows": true,
-          "SkyColor": "0.65443,0.77318,0.83256,1"
+          "SkyColor": "0.05882,0.07451,0.08235,1"
         }
       ]
     },
     {
-      "Id": "1292eb92-dbe0-40b2-8c52-841f9f6d382e",
-      "Name": "pistolpickup",
-      "Position": "457.7998,0,0",
-      "Tags": "trigger",
-      "Enabled": true,
-      "__Prefab": "prefabs/weapons/pickup/pistolpickup.prefab"
-    },
-    {
-      "Id": "6aa8a781-544d-4691-a138-581d7442af08",
-      "Name": "Point Light",
-      "Position": "0,0,256",
+      "Id": "c319bfa0-ce8e-4548-af9d-a9d72de6a1fc",
+      "Name": "Button",
+      "Position": "-384,32,48.00005",
+      "Rotation": "0.00000005960471,0.000000000006896486,1,-0.0000006397578",
       "Enabled": true,
       "Components": [
         {
-          "__type": "PointLight",
+          "__type": "ButtonComponent",
           "__enabled": true,
-          "LightColor": "0.64651,0.36896,0.21951,1",
-          "Radius": 800
+          "Map": "6a297511-f38a-4bdd-9f9d-08f09ddd013b",
+          "ToTrigger": [
+            "c12f3fe8-d542-4799-bbff-9655306d64c2",
+            "c02643e1-c8f2-45a1-b501-39e82cbc51f1"
+          ],
+          "TriggerOnce": false
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/button.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "10,30,30",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent",
+          "__enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "c12f3fe8-d542-4799-bbff-9655306d64c2",
+      "Name": "Object",
+      "Position": "-199.468,87.02844,44.37785",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextPrintComponent",
+          "__enabled": true,
+          "PrintOnce": false,
+          "Text": "Hey So Like"
+        }
+      ]
+    },
+    {
+      "Id": "c02643e1-c8f2-45a1-b501-39e82cbc51f1",
+      "Name": "Door",
+      "Position": "-0.0000136895,-16,128",
+      "Rotation": "-0.00000003749085,0.000000003799233,-0.707107,0.7071065",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DoorComponent",
+          "__enabled": true,
+          "CloseAfter": 0,
+          "CloseAfterOpen": false,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 128,
+          "MoveSpeed": 1,
+          "Opened": false
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "6a297511-f38a-4bdd-9f9d-08f09ddd013b",
+      "Name": "Map Logic",
+      "Position": "-256,0,64",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapLogicGraphComponent",
+          "__enabled": true,
+          "OnButtonPressed": null
         }
       ]
     }
@@ -301,7 +317,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true
   },
-  "Title": "e1m1",
+  "Title": "animgraphtest",
   "Description": "",
   "__references": []
 }

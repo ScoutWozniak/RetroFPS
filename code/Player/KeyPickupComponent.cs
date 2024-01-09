@@ -7,7 +7,7 @@ public sealed class KeyPickupComponent : Component, IItemPickup
 	{
 		//var weapon = SceneUtility.Instantiate( WeaponPrefab );
 		//weapon.SetParent(Scene.Components.Get<PlayerWeaponManagerComponent>(FindMode.EverythingInDescendants).GameObject, false);
-		go.Components.Get<KeyInvComponent>( FindMode.InParent ).UpdateKey(KeyType, true);
+		go.Components.Get<KeyInvComponent>(  ).UpdateKey(KeyType, true);
 		Sound.Play( "quakeitem.pickup" );
 	}
 }

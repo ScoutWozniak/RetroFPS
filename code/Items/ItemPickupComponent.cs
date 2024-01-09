@@ -37,7 +37,7 @@ public sealed class WeaponPickupComponent : Component, IItemPickup
 	{
 		//var weapon = SceneUtility.Instantiate( WeaponPrefab );
 		//weapon.SetParent(Scene.Components.Get<PlayerWeaponManagerComponent>(FindMode.EverythingInDescendants).GameObject, false);
-		go.Components.Get<PlayerWeaponManagerComponent>( FindMode.InParent ).AddWeapon( WeaponData );
+		go.Components.Get<PlayerWeaponManagerComponent>(  ).AddWeapon( WeaponData );
 		Sound.Play( "quakeitem.pickup" );
 	}
 }

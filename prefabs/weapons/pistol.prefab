@@ -1,26 +1,31 @@
 {
   "RootObject": {
-    "Id": "7fe8b899-7ede-4708-be94-fdf175ac3ed6",
+    "Id": "7d5d3575-3916-4790-bab3-d021565bbb44",
     "Name": "pistol",
     "Tags": "viewmodel",
     "Enabled": true,
     "Components": [
       {
-        "__type": "WeaponFireComponent",
+        "__type": "WeaponData",
         "__enabled": true,
-        "Ammo": "Pistol",
-        "AmmoUsage": 1,
         "FireDelay": 0.1,
-        "FireLight": "prefabs/particles/firelight.prefab",
-        "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
-        "HitParticles": "prefabs/particles/hitparticles.prefab",
+        "FireSound": null,
         "InputType": "Pressed",
-        "Viewmodel": "362e0201-772e-4b6e-946c-17e27ee02c6b"
+        "Viewmodel": "d1bb7adb-5acb-49dd-b572-3351d06c7667"
+      },
+      {
+        "__type": "HitscanFireEvent",
+        "__enabled": true,
+        "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
+        "HitSound": null,
+        "Ignore": "trigger,playerhitbox",
+        "ParticleEffect": "prefabs/particles/hitparticles.prefab",
+        "Range": 10000
       }
     ],
     "Children": [
       {
-        "Id": "362e0201-772e-4b6e-946c-17e27ee02c6b",
+        "Id": "d1bb7adb-5acb-49dd-b572-3351d06c7667",
         "Name": "Holder",
         "Enabled": true,
         "Components": [
@@ -28,12 +33,12 @@
             "__type": "ViewmodelComponent",
             "__enabled": true,
             "FireGraphValue": "b_fire",
-            "Renderer": "53ec4759-270f-4c2d-8ed4-36f3505d454c"
+            "Renderer": "68189bba-9598-4c09-9be3-bd0cb2d1bbc3"
           }
         ],
         "Children": [
           {
-            "Id": "53ec4759-270f-4c2d-8ed4-36f3505d454c",
+            "Id": "68189bba-9598-4c09-9be3-bd0cb2d1bbc3",
             "Name": "Viewmodel",
             "Position": "18.35507,-6.055283,-8.462614",
             "Rotation": "-0.00000003989908,-0.000000001021777,-0.6503825,0.759607",

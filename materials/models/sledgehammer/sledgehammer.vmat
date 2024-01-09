@@ -1,0 +1,12 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/retropixel.shader"
+
+	//---- Color ----
+	Color "materials/models/sledgehammer/sledgehammer.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

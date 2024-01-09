@@ -1,0 +1,9 @@
+{
+  "Name": "Hammer",
+  "WeaponPrefab": "prefabs/weapons/hammer.prefab",
+  "UsesAmmo": false,
+  "Ammo": "Pistol",
+  "StartingAmmo": 0,
+  "weaponSlot": 0,
+  "__references": []
+}

@@ -3,14 +3,14 @@ using System.Threading.Tasks;
 
 public sealed class NavmeshComp : Component
 {
-	private NavigationMesh mesh;
+	public NavigationMesh mesh;
 
 	protected override void DrawGizmos()
 	{
 		base.DrawGizmos();
 
 		if ( mesh is not null )
-			Gizmo.Draw.SolidNavigationMesh( mesh );
+			Gizmo.Draw.LineNavigationMesh( mesh );
 	}
 	protected override void OnStart()
 	{

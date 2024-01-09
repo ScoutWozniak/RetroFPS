@@ -7,7 +7,7 @@ using System.Runtime;
 
 public class PlayerController : Component, INetworkSerializable
 {
-	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
+	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 1200 );
 
 	public Vector3 WishVelocity { get; private set; }
 	[Property] public GameObject Eye { get; set; }
@@ -16,13 +16,13 @@ public class PlayerController : Component, INetworkSerializable
 	[Property] float HeadbobAmmount { get; set; } = 5.0f;
 
 	[Category( "Movement" )]
-	[Property] float RunSpeed { get; set; } = 320.0f;
+	[Property] float RunSpeed { get; set; } = 220.0f;
 
 	[Category( "Movement" )]
 	[Property] float WalkSpeed { get; set; } = 110.0f;
 
 	[Category( "Movement" )]
-	[Property] float AirSpeed { get; set; } = 110.0f;
+	[Property] float AirSpeed { get; set; } = 90.0f;
 	public Angles EyeAngles;
 	public bool IsRunning;
 
@@ -57,7 +57,7 @@ public class PlayerController : Component, INetworkSerializable
 
 
 			cam.Transform.Position = Eye.Transform.Position;
-			cam.Transform.Rotation = lookDir * Eye.Transform.LocalRotation;
+			cam.Transform.Rotation = lookDir;
 
 			// Headbob!
 			if (WishVelocity.Length > 0)
@@ -183,5 +183,10 @@ public class PlayerController : Component, INetworkSerializable
 	{
 		IsRunning = stream.Read<bool>();
 		EyeAngles = stream.Read<Angles>();
+	}
+
+	public void SetEyeAngles(Angles angle)
+	{
+		EyeAngles = angle;
 	}
 }

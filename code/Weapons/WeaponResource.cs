@@ -9,8 +9,9 @@ public partial class WeaponResource : GameResource
 
 	public PrefabFile WeaponPrefab { get; set; }
 
-	public AmmoType Ammo { get; set; }
-	public int StartingAmmo { get; set; }
+	public bool UsesAmmo { get; set; } = true;
 
-	public int weaponSlot { get; set; }
+	[Category("Ammo")] public AmmoType Ammo { get; set; }
+	[Category( "Ammo" )] public int StartingAmmo { get; set; }
+	[Category( "Ammo" )] public int weaponSlot { get; set; }
 }

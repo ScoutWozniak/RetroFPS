@@ -1,0 +1,11 @@
+{
+  "UI": false,
+  "Volume": "0.71,0.71,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 35,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/weapons/sledgehammer/axhit2.vsnd"
+  ],
+  "__references": []
+}

@@ -1,0 +1,15 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/world/teleport/r_tele1.vsnd",
+    "sounds/world/teleport/r_tele2.vsnd",
+    "sounds/world/teleport/r_tele3.vsnd",
+    "sounds/world/teleport/r_tele4.vsnd",
+    "sounds/world/teleport/r_tele5.vsnd"
+  ],
+  "__references": []
+}

@@ -1,5 +1,6 @@
 using Sandbox;
 using System;
+using System.Collections.Generic;
 
 public sealed class PlayerWeaponManagerComponent : Component
 {
@@ -10,11 +11,27 @@ public sealed class PlayerWeaponManagerComponent : Component
 
 	public int[] AmmoAmmount { get; set; }
 
+	[Property] List<WeaponResource> GiveOnStart { get; set; }
+
+	WeaponData WeaponFireComponent { 
+		get { 
+			if ( weapons[ActiveWeapon] != null )
+				return weapons[ActiveWeapon].Components.Get<WeaponData>();
+			return null;
+		}
+
+	}
+
 
 	protected override void OnStart()
 	{
 		base.OnStart();
 		AmmoAmmount = new int[Enum.GetNames( typeof( AmmoType ) ).Length];
+
+		foreach(var weapon in GiveOnStart)
+		{
+			AddWeapon(weapon );
+		}
 	}
 	protected override void OnUpdate()
 	{
@@ -35,10 +52,10 @@ public sealed class PlayerWeaponManagerComponent : Component
 			var go = SceneUtility.Instantiate( prefab );
 			go.SetParent( GameObject, false );
 			go.Transform.LocalPosition = Vector3.Zero;
+			go.Components.Get<WeaponData>().SetupStats( weaponResource );
 
 			weapons[weaponResource.weaponSlot] = go;
 			SetActiveWeapon(weaponResource.weaponSlot);
-			Log.Info( ActiveWeapon );
 			weaponResources[weaponResource.weaponSlot] = weaponResource;
 		}
 		AddAmmo( weaponResource.Ammo, weaponResource.StartingAmmo );
@@ -53,15 +70,15 @@ public sealed class PlayerWeaponManagerComponent : Component
 			weapons[slot].Enabled = true;
 			if ( weapons[ActiveWeapon] != null )
 				weapons[ActiveWeapon].Enabled = false;
-			Log.Info( ActiveWeapon );
+			//Log.Info( ActiveWeapon );
 			ActiveWeapon = slot;
 		}
 	}
 
 	public int GetActiveAmmo()
 	{
-		if ( weaponResources[ActiveWeapon] != null && AmmoAmmount[(int)weaponResources[ActiveWeapon].Ammo] != 0 )
-			return AmmoAmmount[(int)weaponResources[ActiveWeapon].Ammo];
+		if ( WeaponFireComponent != null && AmmoAmmount[(int)WeaponFireComponent.Ammo] != 0 )
+			return AmmoAmmount[(int)WeaponFireComponent.Ammo];
 		else
 			return 0;
 	}
@@ -74,6 +91,7 @@ public sealed class PlayerWeaponManagerComponent : Component
 
 public enum AmmoType
 {
+	None,
 	Pistol,
 	Rifle
 }

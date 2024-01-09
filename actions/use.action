@@ -1,0 +1,138 @@
+{
+  "Graph": {
+    "Kind": "Action",
+    "Variables": [
+      {
+        "Id": 5,
+        "Name": "_this",
+        "Type": "Sandbox.Game/Sandbox.Component",
+        "Input": "_this"
+      }
+    ],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "Properties": {
+          "parameters": [
+            {
+              "Name": "_in1",
+              "Type": "Sandbox.Game/Sandbox.GameObject",
+              "IsRequired": true,
+              "Display": {
+                "Title": "Target"
+              }
+            },
+            {
+              "Name": "_in2",
+              "Type": "Sandbox.Game/Sandbox.GameObject",
+              "IsRequired": true,
+              "Display": {
+                "Title": "User"
+              }
+            },
+            {
+              "Name": "_this",
+              "Type": "Sandbox.Game/Sandbox.Component",
+              "IsRequired": true
+            }
+          ]
+        },
+        "UserData": {
+          "Position": "-496,0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "call",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+          "_name": "GetAll",
+          "_isStatic": false,
+          "T": {
+            "$type": "Type",
+            "Type": "package.local.retrofps/IUsable"
+          }
+        },
+        "UserData": {
+          "Position": "-192,16"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "foreach",
+        "UserData": {
+          "Position": "-32,-128"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "call",
+        "Properties": {
+          "_type": "package.local.retrofps/IUsable",
+          "_name": "OnUse",
+          "_isStatic": false
+        },
+        "UserData": {
+          "Position": "192,32"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "const.bool",
+        "Properties": {
+          "value": true
+        },
+        "UserData": {
+          "Position": "-64,128"
+        }
+      }
+    ],
+    "Links": [
+      [
+        1,
+        "_result",
+        2,
+        "enumerable"
+      ],
+      [
+        2,
+        "body.value",
+        3,
+        "_target"
+      ],
+      [
+        4,
+        "_result",
+        3,
+        "value"
+      ],
+      [
+        0,
+        "_in1",
+        1,
+        "_target"
+      ],
+      [
+        0,
+        "_signal",
+        2,
+        "_signal"
+      ],
+      [
+        0,
+        "_in2",
+        3,
+        "go"
+      ]
+    ],
+    "UserData": {
+      "Title": "Use",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom",
+      "id": "d69b6958-6c32-4bbc-861f-c880bb9bb50b"
+    }
+  },
+  "__references": []
+}

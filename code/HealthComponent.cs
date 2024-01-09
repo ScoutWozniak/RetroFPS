@@ -2,12 +2,12 @@ using Sandbox;
 
 public sealed class HealthComponent : Component
 {
-	[Property] public int Health { get; set; } = 100;
-	[Property] public int Armour { get; set; } = 0;
+	[Property] public float Health { get; set; } = 100;
+	[Property] public float Armour { get; set; } = 0;
 	[Property] SoundEvent HurtSound { get; set; }
 	[Property] bool RemoveOnDeath { get; set; } = true;
 
-	public void Hurt(int damage)
+	public void Hurt(float damage)
 	{
 		Health -= damage;
 		

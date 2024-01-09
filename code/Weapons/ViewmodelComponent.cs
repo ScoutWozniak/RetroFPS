@@ -13,6 +13,7 @@ public sealed class ViewmodelComponent : Component
 
 	public void FireEffects()
 	{
-		Renderer.Set( FireGraphValue, true );
+		if (FireGraphValue != "")
+			Renderer.Set( FireGraphValue, true );
 	}
 }

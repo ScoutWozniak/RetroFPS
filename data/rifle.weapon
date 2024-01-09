@@ -1,6 +1,7 @@
 {
   "Name": "Rifle",
   "WeaponPrefab": "prefabs/weapons/rifle.prefab",
+  "UsesAmmo": true,
   "Ammo": "Rifle",
   "StartingAmmo": 30,
   "weaponSlot": 2,

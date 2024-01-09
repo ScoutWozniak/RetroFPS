@@ -1,6 +1,7 @@
 {
   "Name": "Pistol",
   "WeaponPrefab": "prefabs/weapons/pistol.prefab",
+  "UsesAmmo": true,
   "Ammo": "Pistol",
   "StartingAmmo": 10,
   "weaponSlot": 1,

@@ -1,35 +1,40 @@
 {
   "RootObject": {
-    "Id": "81867cb2-aa8f-440a-b29b-140a6a5d78a0",
-    "Name": "rifle",
-    "Tags": "viewmodel",
+    "Id": "ea92c6ab-aab9-459a-b216-e9d1cc3fc8a6",
+    "Name": "hammer",
     "Enabled": true,
     "Components": [
       {
         "__type": "WeaponData",
         "__enabled": true,
-        "FireDelay": 0.1,
+        "FireDelay": 0.25,
         "FireSound": null,
         "InputType": "Down",
-        "Viewmodel": "345d53c9-9ff1-4438-a836-88fb09f0fa26"
+        "Viewmodel": "5aac4dee-c830-4470-8476-5182ee03a2c0"
       },
       {
         "__type": "HitscanFireEvent",
         "__enabled": true,
         "Damage": 5,
-        "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
-        "HitSound": null,
+        "FireSound": "sounds/weapons/sledgehammer/sledge.swing.sound",
+        "HitSound": "sounds/weapons/sledgehammer/sledge.hit.sound",
         "Ignore": "trigger,playerhitbox",
         "ParticleEffect": "prefabs/particles/hitparticles.prefab",
-        "Range": 5000
+        "Range": 100
       }
     ],
     "Children": [
       {
-        "Id": "345d53c9-9ff1-4438-a836-88fb09f0fa26",
-        "Name": "Viewmodel",
+        "Id": "5aac4dee-c830-4470-8476-5182ee03a2c0",
+        "Name": "Holder",
         "Enabled": true,
         "Components": [
+          {
+            "__type": "ViewmodelComponent",
+            "__enabled": true,
+            "FireGraphValue": "b_attack",
+            "Renderer": "5aac4dee-c830-4470-8476-5182ee03a2c0"
+          },
           {
             "__type": "SkinnedModelRenderer",
             "__enabled": true,
@@ -38,15 +43,9 @@
             "CreateBoneObjects": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
-            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "Model": "models/sledgehammer/v_sledge.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ViewmodelComponent",
-            "__enabled": true,
-            "FireGraphValue": "b_attack",
-            "Renderer": "345d53c9-9ff1-4438-a836-88fb09f0fa26"
           }
         ]
       }
@@ -55,7 +54,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.v_mp5"
-  ]
+  "__references": []
 }
