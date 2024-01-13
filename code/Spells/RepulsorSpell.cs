@@ -5,9 +5,11 @@ public sealed class RepulsorSpell : Component, ISpell
 {
 	[Property] GameObject RepulsorPrefab { get; set; }
 
-	[Property] float castCooldown { get; set; }
- 	private float currentCooldown;
+	[Property] public float castCooldown { get; set; }
+ 	public float currentCooldown {get; set;}
 	[Property] float PersonalIntensity { get; set; }
+
+	public float cooldownPercentage => MathX.Clamp(1f - (currentCooldown / castCooldown), 0f, 1f);
 	
 	public void CastSpell()
 	{
