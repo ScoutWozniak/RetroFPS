@@ -9,6 +9,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "CharacterController",
           "__enabled": true,
           "Acceleration": 10,
@@ -19,6 +20,7 @@
           "StepHeight": 18
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,32",
@@ -28,6 +30,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "PlayerController",
           "__enabled": true,
           "AirSpeed": 90,
@@ -39,6 +42,7 @@
           "WalkSpeed": 110
         },
         {
+          "__version": 0,
           "__type": "PlayerWeaponManagerComponent",
           "__enabled": true,
           "ActiveWeapon": 0,
@@ -47,6 +51,7 @@
           ]
         },
         {
+          "__version": 0,
           "__type": "HealthComponent",
           "__enabled": true,
           "Armour": 0,
@@ -71,6 +76,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "CameraComponent",
               "__enabled": true,
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -88,17 +94,20 @@
               "ZNear": 1
             },
             {
+              "__version": 0,
               "__type": "Pixelate",
               "__enabled": false,
               "Scale": 0.05
             },
             {
+              "__version": 0,
               "__type": "ChromaticAberration",
               "__enabled": false,
               "Offset": "4,6,0",
               "Scale": 0.10000002
             },
             {
+              "__version": 0,
               "__type": "Bloom",
               "__enabled": false,
               "BloomColor": {
@@ -128,6 +137,7 @@
               "ThresholdWidth": 0
             },
             {
+              "__version": 0,
               "__type": "CamAmbientLightComponent",
               "__enabled": false
             }
@@ -141,6 +151,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "ScreenPanel",
                   "__enabled": true,
                   "AutoScreenScale": true,
@@ -149,6 +160,7 @@
                   "ZIndex": 100
                 },
                 {
+                  "__version": 0,
                   "__type": "PlayerHudComponent",
                   "__enabled": true,
                   "HealthComp": "02caaa98-8237-432e-98fa-c7f91bdb2e20",
@@ -168,6 +180,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -178,6 +191,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -196,11 +210,12 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DirectionalLight",
           "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
+          "LightColor": "0.4546,0.58034,0.6186,1",
           "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
+          "SkyColor": "0.21729,0.3608,0.43256,1"
         }
       ]
     },
@@ -212,16 +227,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "ButtonComponent",
-          "__enabled": true,
-          "Map": "6a297511-f38a-4bdd-9f9d-08f09ddd013b",
-          "ToTrigger": [
-            "c12f3fe8-d542-4799-bbff-9655306d64c2",
-            "c02643e1-c8f2-45a1-b501-39e82cbc51f1"
-          ],
-          "TriggerOnce": false
-        },
-        {
+          "__version": 0,
           "__type": "SkinnedModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -234,6 +240,7 @@
           "Tint": "1,1,1,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -243,8 +250,20 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "UsableComponent",
           "__enabled": true
+        },
+        {
+          "__version": 0,
+          "__type": "ButtonComponent",
+          "__enabled": true,
+          "OnPressed": null,
+          "ToTrigger": [
+            "c02643e1-c8f2-45a1-b501-39e82cbc51f1",
+            "c12f3fe8-d542-4799-bbff-9655306d64c2"
+          ],
+          "TriggerOnce": true
         }
       ]
     },
@@ -255,6 +274,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "TextPrintComponent",
           "__enabled": true,
           "PrintOnce": false,
@@ -270,6 +290,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DoorComponent",
           "__enabled": true,
           "CloseAfter": 0,
@@ -281,6 +302,7 @@
           "Opened": false
         },
         {
+          "__version": 0,
           "__type": "SkinnedModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -291,19 +313,6 @@
           "Model": "models/keydoor.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "6a297511-f38a-4bdd-9f9d-08f09ddd013b",
-      "Name": "Map Logic",
-      "Position": "-256,0,64",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "MapLogicGraphComponent",
-          "__enabled": true,
-          "OnButtonPressed": null
         }
       ]
     }

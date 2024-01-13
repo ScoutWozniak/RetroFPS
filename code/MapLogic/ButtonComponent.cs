@@ -1,11 +1,12 @@
 using Sandbox;
 using System.Collections.Generic;
+using System;
 public sealed class ButtonComponent : Component, IUsable
 {
-	[Property] List<GameObject> ToTrigger { get; set; }
+	[Property] public List<GameObject> ToTrigger { get; set; }
 	[Property] bool TriggerOnce { get; set; } = true;
 
-	[Property] MapLogicGraphComponent Map { get; set; }
+	[Property] public Action OnPressed { get; set; }
 
 
 	bool Used = false;
@@ -13,18 +14,11 @@ public sealed class ButtonComponent : Component, IUsable
 	{
 		if ( TriggerOnce && !Used || !TriggerOnce )
 		{
-			foreach ( GameObject g in ToTrigger )
-			{
-				foreach ( var comp in g.Components.GetAll<IUsable>() )
-				{
-					comp.OnUse(true, g);
-				}
-			}
+			//OnPressed?.Invoke();
 			Used = true;
 			Sound.Play( "button.pressed", Transform.Position );
+			TriggerAll();
 		}
-
-		Map.OnButtonPressed?.Invoke( GameObject, go );
 	}
 
 	public void OnToggled(bool value)
@@ -35,5 +29,15 @@ public sealed class ButtonComponent : Component, IUsable
 
 	}
 
+	public void TriggerAll()
+	{
+		foreach ( GameObject g in ToTrigger )
+		{
+			foreach ( var comp in g.Components.GetAll<IUsable>() )
+			{
+				comp.OnUse( true, g );
+			}
+		}
+	}
 
 }

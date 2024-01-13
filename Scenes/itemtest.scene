@@ -2,198 +2,17 @@
   "Id": "6a134f8c-542e-49eb-a999-6099b45a7f77",
   "GameObjects": [
     {
-      "Id": "cd3ad37e-8728-4070-ad65-f03a7a067ecc",
-      "Name": "Player",
-      "Position": "864,0,0.00006807383",
-      "Rotation": "-0.00000001171282,0.0000000006935904,-0.1990159,0.9799966",
-      "Tags": "playerhitbox",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "CharacterController",
-          "__enabled": true,
-          "Acceleration": 10,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "playerhitbox,trigger,player",
-          "Radius": 16,
-          "StepHeight": 18
-        },
-        {
-          "__type": "BoxCollider",
-          "__enabled": true,
-          "Center": "0,0,32",
-          "IsTrigger": false,
-          "Scale": "30,30,64",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "PlayerController",
-          "__enabled": true,
-          "AirSpeed": 90,
-          "Eye": "9ebe36cc-1e26-42f8-b6ca-7a08493a813f",
-          "Gravity": "0,0,1200",
-          "HeadbobAmmount": 5,
-          "HeadbobSpeed": 5,
-          "RunSpeed": 220,
-          "WalkSpeed": 110
-        },
-        {
-          "__type": "PlayerWeaponManagerComponent",
-          "__enabled": true,
-          "ActiveWeapon": 0,
-          "GiveOnStart": [
-            "data/hammer.weapon"
-          ]
-        },
-        {
-          "__type": "HealthComponent",
-          "__enabled": true,
-          "Armour": 0,
-          "Health": 100,
-          "HurtSound": null,
-          "RemoveOnDeath": true
-        }
-      ],
-      "Children": [
-        {
-          "Id": "9ebe36cc-1e26-42f8-b6ca-7a08493a813f",
-          "Name": "Eye",
-          "Position": "0,0,64",
-          "Tags": "playerhitbox",
-          "Enabled": true
-        },
-        {
-          "Id": "85427b4a-1296-4bb9-b160-4a3bea29bf7f",
-          "Name": "Camera",
-          "Position": "-320,96.00001,32",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "CameraComponent",
-              "__enabled": true,
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 90.94,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 1
-            },
-            {
-              "__type": "Pixelate",
-              "__enabled": false,
-              "Scale": 0.05
-            },
-            {
-              "__type": "ChromaticAberration",
-              "__enabled": true,
-              "Offset": "4,6,0",
-              "Scale": 0.10000002
-            },
-            {
-              "__type": "Bloom",
-              "__enabled": true,
-              "BloomColor": {
-                "color": [
-                  {
-                    "c": "1,1,1,1"
-                  },
-                  {
-                    "t": 1,
-                    "c": "1,1,1,1"
-                  }
-                ],
-                "alpha": []
-              },
-              "BloomCurve": [
-                {
-                  "y": 0.5
-                },
-                {
-                  "x": 1,
-                  "y": 1
-                }
-              ],
-              "Mode": "Additive",
-              "Strength": 1.53,
-              "Threshold": 0.5,
-              "ThresholdWidth": 0
-            }
-          ],
-          "Children": [
-            {
-              "Id": "90949b4e-1ba8-4e32-bb42-a36f9a514fa9",
-              "Name": "Hud",
-              "Position": "0,0,0",
-              "Tags": "playerhitbox",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "ScreenPanel",
-                  "__enabled": true,
-                  "AutoScreenScale": true,
-                  "Opacity": 1,
-                  "Scale": 1,
-                  "ZIndex": 100
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Id": "429cdce4-4c88-4d30-a02c-d90f6b09b365",
-          "Name": "Point Light",
-          "Position": "-0.0000002245357,-0.00000009512047,40.49708",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PointLight",
-              "__enabled": true,
-              "LightColor": "0.91373,0.98039,1,1",
-              "Radius": 400
-            }
-          ]
-        },
-        {
-          "Id": "7a30c8ba-9817-4ef2-882d-24d769f790a8",
-          "Name": "HUD",
-          "Position": "0,0,0",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ScreenPanel",
-              "__enabled": true,
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 100
-            },
-            {
-              "__type": "PlayerHudComponent",
-              "__enabled": true,
-              "HealthComp": "cd3ad37e-8728-4070-ad65-f03a7a067ecc",
-              "MyStringValue": "Hello World!",
-              "WeaponManager": "cd3ad37e-8728-4070-ad65-f03a7a067ecc"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "ed4da244-6977-46ee-809f-e8545da7e0a1",
       "Name": "Navmesh",
       "Enabled": true
+    },
+    {
+      "Id": "b9e544c3-9139-4358-ad20-3d86603a3340",
+      "Name": "Player",
+      "Position": "0,0,32",
+      "Tags": "playerhitbox",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
     },
     {
       "Id": "09e54ab0-4576-4589-918e-ca0ff761c742",
@@ -212,6 +31,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "CharacterController",
           "__enabled": true,
           "Acceleration": 10,
@@ -230,6 +50,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SkinnedModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -596,6 +417,7 @@
                                                   "Enabled": true,
                                                   "Components": [
                                                     {
+                                                      "__version": 0,
                                                       "__type": "ModelRenderer",
                                                       "__enabled": true,
                                                       "BodyGroups": 18446744073709551615,
@@ -1009,6 +831,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelHitboxes",
               "__enabled": true,
               "Renderer": "76509eaa-4644-4e75-83ee-19e8854bcfea",
@@ -1026,6 +849,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "CharacterController",
           "__enabled": true,
           "Acceleration": 10,
@@ -1034,6 +858,18 @@
           "IgnoreLayers": "trigger",
           "Radius": 16,
           "StepHeight": 18
+        },
+        {
+          "__version": 0,
+          "__type": "EnemyStateComponent",
+          "__enabled": true,
+          "AttackRate": 5,
+          "CC": "b8bdeae9-8ea0-4f50-8e70-a51bdcd2def3",
+          "Gravity": "0,0,1200",
+          "MoveSpeed": 150,
+          "ProjectilePrefab": "prefabs/weapons/projectiles/enemies/knightproj.prefab",
+          "State": "E_IDLE",
+          "Target": null
         }
       ],
       "Children": [
@@ -1044,6 +880,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SkinnedModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -1410,6 +1247,7 @@
                                                   "Enabled": true,
                                                   "Components": [
                                                     {
+                                                      "__version": 0,
                                                       "__type": "ModelRenderer",
                                                       "__enabled": true,
                                                       "BodyGroups": 18446744073709551615,
@@ -1823,6 +1661,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelHitboxes",
               "__enabled": true,
               "Renderer": "30a47cd0-8bca-4852-8f4c-a7148b2a0cb9",
@@ -1844,6 +1683,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "PointLight",
               "__enabled": true,
               "LightColor": "0.91373,0.98039,1,1",
@@ -1858,6 +1698,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "PointLight",
               "__enabled": true,
               "LightColor": "0.91373,0.98039,1,1",
@@ -1872,6 +1713,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "PointLight",
               "__enabled": true,
               "LightColor": "0.91373,0.98039,1,1",
@@ -1886,6 +1728,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "VolumetricFogVolume",
               "__enabled": true,
               "Bounds": {
@@ -1905,6 +1748,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SkyBox2D",
               "__enabled": true,
               "SkyMaterial": "materials/skybox/light_test_sky_sunset_light.vmat",
@@ -1919,6 +1763,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "EnvmapProbe",
               "__enabled": true,
               "Bounds": {
@@ -1938,9 +1783,10 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "MapInstance",
               "__enabled": true,
-              "MapName": "itemtest",
+              "MapName": "maps/itemtest.vpk",
               "OnMapLoaded": null,
               "OnMapUnloaded": null,
               "UseMapFromLaunch": true
@@ -1955,6 +1801,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SoundPointComponent",
               "__enabled": true,
               "Force2d": false,
@@ -1983,6 +1830,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2001,6 +1849,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2019,6 +1868,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2037,6 +1887,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2055,6 +1906,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2073,6 +1925,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "TextRenderer",
                   "__enabled": true,
                   "Color": "1,1,1,1",
@@ -2100,6 +1953,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SkinnedModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2112,6 +1966,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2130,6 +1985,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "SkinnedModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2142,6 +1998,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2159,6 +2016,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2169,6 +2027,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2187,6 +2046,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2197,6 +2057,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2215,6 +2076,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2234,6 +2096,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "ModelRenderer",
                   "__enabled": true,
                   "BodyGroups": 18446744073709551615,
@@ -2255,6 +2118,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2274,6 +2138,7 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "ModelRenderer",
                   "__enabled": true,
                   "BodyGroups": 18446744073709551615,
@@ -2300,6 +2165,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "PointLight",
               "__enabled": true,
               "LightColor": "0.91373,0.98039,1,1",
@@ -2316,6 +2182,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2325,6 +2192,7 @@
               "Surface": null
             },
             {
+              "__version": 0,
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2343,6 +2211,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2353,6 +2222,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2370,6 +2240,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
@@ -2380,6 +2251,7 @@
               "Tint": "1,1,1,1"
             },
             {
+              "__version": 0,
               "__type": "BoxCollider",
               "__enabled": true,
               "Center": "0,0,0",
@@ -2387,6 +2259,72 @@
               "Scale": "50,50,50",
               "Static": false,
               "Surface": null
+            },
+            {
+              "__version": 0,
+              "__type": "Rigidbody",
+              "__enabled": true,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "Id": "7cd378c7-8f35-4a0b-871c-c599263f3d92",
+          "Name": "DeathTrigger",
+          "Position": "352,-192,31.99996",
+          "Enabled": true,
+          "Components": [
+            {
+              "__version": 0,
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/devtint.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__version": 0,
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": "surfaces/wood.surface"
+            },
+            {
+              "__version": 0,
+              "__type": "Rigidbody",
+              "__enabled": true,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__version": 0,
+              "__type": "HealthComponent",
+              "__enabled": true,
+              "Armour": 0,
+              "Health": 15,
+              "HurtSound": "sounds/impacts/impact-bullet-wood.sound",
+              "RemoveOnDeath": true
+            },
+            {
+              "__version": 0,
+              "__type": "DeathSoundEvent",
+              "__enabled": true,
+              "DeathSound": "sounds/physics/breaking/break_wood_plank.sound"
             }
           ]
         }
@@ -2415,6 +2353,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -2424,6 +2363,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2443,6 +2383,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -2452,6 +2393,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2471,6 +2413,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "TextRenderer",
           "__enabled": true,
           "Color": "1,1,1,1",
@@ -2489,6 +2432,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2499,6 +2443,7 @@
           "Tint": "0.19307,0.19307,0.19307,1"
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,0",
@@ -2516,6 +2461,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.91373,0.98039,1,1",
@@ -2531,6 +2477,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "-64,0.000001966953,42",
@@ -2540,6 +2487,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2559,6 +2507,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "-64,0.000001966953,42",
@@ -2568,6 +2517,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
@@ -2586,6 +2536,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "TextRenderer",
           "__enabled": true,
           "Color": "0.45103,0.47149,0.5297,1",
@@ -2603,6 +2554,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "TextRenderer",
           "__enabled": true,
           "Color": "0.45103,0.47149,0.5297,1",
@@ -2620,6 +2572,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": false,
           "LightColor": "0.79703,0.29987,0.29987,1",
@@ -2635,6 +2588,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DirectionalLight",
           "__enabled": true,
           "LightColor": "0.84653,0.60314,0.47775,1",
@@ -2650,6 +2604,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.91373,0.98039,1,1",
@@ -2664,6 +2619,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.91373,0.98039,1,1",

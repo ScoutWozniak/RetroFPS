@@ -31,95 +31,94 @@
           ]
         },
         "UserData": {
-          "Position": "-588,0"
+          "Position": "-756,0"
         }
       },
       {
         "Id": 1,
-        "Type": "call",
-        "Properties": {
-          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-          "_name": "GetAll",
-          "_isStatic": false,
-          "T": {
-            "$type": "Type",
-            "Type": "package.local.retrofps/IUsable"
-          }
-        },
+        "Type": "foreach",
         "UserData": {
-          "Position": "-288,48"
+          "Position": "-24,-128"
         }
       },
       {
         "Id": 2,
-        "Type": "foreach",
+        "Type": "property.get",
+        "Properties": {
+          "_type": "package.local.retrofps/ButtonComponent",
+          "_name": "ToTrigger"
+        },
         "UserData": {
-          "Position": "-96,-80"
+          "Position": "-280,-64"
         }
       },
       {
         "Id": 3,
-        "Type": "call",
+        "Type": "graph",
         "Properties": {
-          "_type": "package.local.retrofps/IUsable",
-          "_name": "OnUse",
-          "_isStatic": false
-        },
-        "Inputs": {
-          "value": true
+          "graph": "actions/use.action"
         },
         "UserData": {
-          "Position": "288,-48"
+          "Position": "456,64"
         }
       },
       {
         "Id": 4,
-        "Type": "scene.getobject",
+        "Type": "call",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+          "_name": "Get",
+          "_isStatic": false,
+          "T": {
+            "$type": "Type",
+            "Type": "package.local.retrofps/ButtonComponent"
+          }
+        },
         "UserData": {
-          "Position": "-80,80"
+          "Position": "-456,128"
         }
       }
     ],
     "Links": [
       [
         1,
-        "_result",
-        2,
-        "enumerable"
-      ],
-      [
-        2,
         "body",
         3,
         "_signal"
       ],
       [
-        2,
+        1,
         "body.value",
         3,
-        "_target"
+        "_in1"
+      ],
+      [
+        2,
+        "_result",
+        1,
+        "enumerable"
       ],
       [
         4,
         "_result",
-        3,
-        "go"
-      ],
-      [
-        0,
-        "_in1",
-        1,
-        "_target"
+        2,
+        "target"
       ],
       [
         0,
         "_signal",
-        2,
+        1,
         "_signal"
+      ],
+      [
+        0,
+        "_in1",
+        4,
+        "_target"
       ]
     ],
     "UserData": {
-      "Title": "Use",
+      "Title": "Buttonuse",
       "Description": "No description provided.",
       "Icon": "account_tree",
       "Category": "Custom"

@@ -76,6 +76,8 @@ public sealed class EnemyStateComponent : Component
 
 	void StateIdle()
 	{
+		if ( Target == null )
+			return;
 		var rotForward = Transform.Rotation.Forward;
 		var playerForward = (Target.Transform.Position - Transform.Position).Normal;
 

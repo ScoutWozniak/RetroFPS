@@ -7,9 +7,10 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "MapInstance",
           "__enabled": true,
-          "MapName": "e1m1",
+          "MapName": "maps/e1m1.vpk",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
@@ -25,6 +26,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "CharacterController",
           "__enabled": true,
           "Acceleration": 10,
@@ -35,6 +37,7 @@
           "StepHeight": 18
         },
         {
+          "__version": 0,
           "__type": "BoxCollider",
           "__enabled": true,
           "Center": "0,0,32",
@@ -44,6 +47,7 @@
           "Surface": null
         },
         {
+          "__version": 0,
           "__type": "PlayerController",
           "__enabled": true,
           "AirSpeed": 90,
@@ -55,14 +59,17 @@
           "WalkSpeed": 110
         },
         {
+          "__version": 0,
           "__type": "PlayerWeaponManagerComponent",
           "__enabled": true,
           "ActiveWeapon": 0,
+          "CurrentSpellHand": null,
           "GiveOnStart": [
             "data/hammer.weapon"
           ]
         },
         {
+          "__version": 0,
           "__type": "HealthComponent",
           "__enabled": true,
           "Armour": 0,
@@ -87,6 +94,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "CameraComponent",
               "__enabled": true,
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -104,17 +112,20 @@
               "ZNear": 1
             },
             {
+              "__version": 0,
               "__type": "Pixelate",
               "__enabled": false,
               "Scale": 0.05
             },
             {
+              "__version": 0,
               "__type": "ChromaticAberration",
               "__enabled": true,
               "Offset": "4,6,0",
               "Scale": 0.10000002
             },
             {
+              "__version": 0,
               "__type": "Bloom",
               "__enabled": true,
               "BloomColor": {
@@ -142,10 +153,6 @@
               "Strength": 1.53,
               "Threshold": 0.5,
               "ThresholdWidth": 0
-            },
-            {
-              "__type": "CamAmbientLightComponent",
-              "__enabled": true
             }
           ],
           "Children": [
@@ -157,12 +164,288 @@
               "Enabled": true,
               "Components": [
                 {
+                  "__version": 0,
                   "__type": "ScreenPanel",
                   "__enabled": true,
                   "AutoScreenScale": true,
                   "Opacity": 1,
                   "Scale": 1,
                   "ZIndex": 100
+                }
+              ]
+            },
+            {
+              "Id": "36897b44-e03c-4901-aabf-d8c4ced1d84d",
+              "Name": "SpellArm",
+              "Position": "0,0,0",
+              "Tags": "playerhitbox",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__version": 0,
+                  "__type": "SpellArmComponent",
+                  "__enabled": true,
+                  "ViewModel": "bde87f55-2d3f-4af9-89a0-859243793a06"
+                },
+                {
+                  "__version": 0,
+                  "__type": "RepulsorSpell",
+                  "__enabled": true,
+                  "PersonalIntensity": 0,
+                  "RepulsorPrefab": null
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "bde87f55-2d3f-4af9-89a0-859243793a06",
+                  "Name": "v_arms",
+                  "Position": "0,0,0",
+                  "Tags": "playerhitbox",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__version": 0,
+                      "__type": "SkinnedModelRenderer",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "BoneMergeTarget": null,
+                      "CreateBoneObjects": true,
+                      "MaterialGroup": null,
+                      "MaterialOverride": null,
+                      "Model": "models/arms/v_arms.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "Id": "6e9617b1-f332-423c-8093-9a6657631e50",
+                      "Name": "Bone",
+                      "Position": "39.99997,0.00003051758,-10.00003",
+                      "Rotation": "0.5000001,-0.4999995,-0.5000002,0.5000003",
+                      "Tags": "playerhitbox",
+                      "Enabled": true,
+                      "Children": [
+                        {
+                          "Id": "023e2ff1-878d-4978-b058-22a718e4ac7d",
+                          "Name": "Bone_001",
+                          "Position": "-0.00003400548,24.869,-0.000008282972",
+                          "Tags": "playerhitbox",
+                          "Enabled": true,
+                          "Children": [
+                            {
+                              "Id": "58387b9f-3a21-465a-9e27-5444f5290bfc",
+                              "Name": "Bone_002",
+                              "Position": "-0.0000341817,25.26325,-0.00003844806",
+                              "Tags": "playerhitbox",
+                              "Enabled": true,
+                              "Children": [
+                                {
+                                  "Id": "7940fe07-0156-4f47-8b89-f8f35c3b9a72",
+                                  "Name": "effectbone",
+                                  "Position": "-0.00002178597,4.867764,-5.000026",
+                                  "Rotation": "-0.7071062,-0.0000001192093,0.0000001064905,0.7071073",
+                                  "Tags": "playerhitbox",
+                                  "Enabled": true,
+                                  "Children": [
+                                    {
+                                      "Id": "fde4bc1c-0c44-4953-a037-397c4e27f156",
+                                      "Name": "effectbone_end",
+                                      "Position": "-17.27512,22.51768,-44.52565",
+                                      "Rotation": "0.135282,0.5271402,0.8225239,-0.1651565",
+                                      "Tags": "playerhitbox",
+                                      "Enabled": true
+                                    },
+                                    {
+                                      "Id": "85dd32f1-0432-4fa6-8aee-3d5b8ce1c058",
+                                      "Name": "Spray",
+                                      "Position": "-0.000004881279,5.122865,0.0000039905",
+                                      "Rotation": "0.00000004390222,-0.000000001915474,0.707107,0.7071065",
+                                      "Tags": "playerhitbox",
+                                      "Enabled": true,
+                                      "Components": [
+                                        {
+                                          "__version": 0,
+                                          "__type": "ParticleEffect",
+                                          "__enabled": true,
+                                          "Alpha": {
+                                            "Type": "Curve",
+                                            "CurveA": [
+                                              {
+                                                "y": 1
+                                              },
+                                              {
+                                                "x": 0.48029557,
+                                                "y": 1,
+                                                "in": 1.5365853,
+                                                "out": -1.5365853
+                                              },
+                                              {
+                                                "x": 1,
+                                                "in": 1.312303,
+                                                "out": -1.312303
+                                              }
+                                            ],
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "ApplyColor": true,
+                                          "ApplyRotation": false,
+                                          "ApplyShape": true,
+                                          "Bounce": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "Brightness": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "Bumpiness": {},
+                                          "Collision": false,
+                                          "CollisionIgnore": null,
+                                          "CollisionRadius": 1,
+                                          "Damping": {},
+                                          "DieOnCollisionChance": {},
+                                          "Force": false,
+                                          "ForceDirection": "0,0,-200",
+                                          "ForceScale": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "Friction": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "Gradient": {
+                                            "Type": "Range",
+                                            "Evaluation": "Particle",
+                                            "GradientA": {
+                                              "color": [
+                                                {
+                                                  "t": 0.5,
+                                                  "c": "1,1,1,1"
+                                                }
+                                              ],
+                                              "alpha": []
+                                            },
+                                            "GradientB": {
+                                              "color": [
+                                                {
+                                                  "t": 0.5,
+                                                  "c": "1,1,1,1"
+                                                }
+                                              ],
+                                              "alpha": []
+                                            },
+                                            "ConstantA": "0.98515,0.92604,0,1",
+                                            "ConstantB": "1,0.22,0,1"
+                                          },
+                                          "Lifetime": {
+                                            "Type": "Range",
+                                            "Evaluation": "Particle",
+                                            "Constants": "0.1,0.1,0,0"
+                                          },
+                                          "MaxParticles": 5000,
+                                          "PerParticleTimeScale": {
+                                            "Constants": "1,0.4,0,0"
+                                          },
+                                          "PreWarm": 0,
+                                          "PushStrength": {},
+                                          "Roll": {
+                                            "Type": "Range",
+                                            "Evaluation": "Particle",
+                                            "Constants": "0,360,0,0"
+                                          },
+                                          "Scale": {
+                                            "Type": "Curve",
+                                            "CurveA": {
+                                              "rangey": "0,3",
+                                              "frames": [
+                                                {
+                                                  "in": -9.333329,
+                                                  "out": 9.333329
+                                                },
+                                                {
+                                                  "x": 0.03325123,
+                                                  "y": 1,
+                                                  "in": -0.056075174,
+                                                  "out": 0.056075174
+                                                },
+                                                {
+                                                  "x": 1,
+                                                  "in": 2.9152544,
+                                                  "out": -2.9152544
+                                                }
+                                              ]
+                                            },
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "SequenceId": {},
+                                          "SequenceSpeed": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "SequenceTime": {
+                                            "Constants": "1,0,0,0"
+                                          },
+                                          "SheetSequence": false,
+                                          "Space": "World",
+                                          "StartVelocity": {
+                                            "Type": "Range",
+                                            "Evaluation": "Particle",
+                                            "Constants": "100,200,0,0"
+                                          },
+                                          "Stretch": {},
+                                          "TimeScale": 1,
+                                          "Tint": "1,1,1,1"
+                                        },
+                                        {
+                                          "__version": 0,
+                                          "__type": "ParticleSpriteRenderer",
+                                          "__enabled": true,
+                                          "Additive": false,
+                                          "BlurAmount": 0.5,
+                                          "BlurOpacity": 0.91,
+                                          "BlurSpacing": 0.73,
+                                          "DepthFeather": 0,
+                                          "FaceVelocity": false,
+                                          "FogStrength": 1,
+                                          "LeadingTrail": true,
+                                          "MotionBlur": false,
+                                          "Opaque": false,
+                                          "RotationOffset": 0,
+                                          "Scale": 1,
+                                          "Shadows": false,
+                                          "SortMode": "Unsorted",
+                                          "Texture": "materials/particles/shapes/star1.vtex"
+                                        },
+                                        {
+                                          "__version": 0,
+                                          "__type": "ParticleSphereEmitter",
+                                          "__enabled": true,
+                                          "Burst": 100,
+                                          "Delay": 0,
+                                          "DestroyOnEnd": false,
+                                          "Duration": 10,
+                                          "Loop": true,
+                                          "OnEdge": false,
+                                          "Radius": 3.99,
+                                          "Rate": 301.17,
+                                          "Velocity": 24.54
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Id": "8eeec546-2d65-42c4-86d1-8e0589aa47c1",
+                      "Name": "root",
+                      "Position": "0,0,0",
+                      "Rotation": "0.4999998,-0.4999997,-0.4999999,0.5000005",
+                      "Tags": "playerhitbox",
+                      "Enabled": true
+                    }
+                  ]
                 }
               ]
             }
@@ -176,6 +459,7 @@
           "Enabled": true,
           "Components": [
             {
+              "__version": 0,
               "__type": "ScreenPanel",
               "__enabled": true,
               "AutoScreenScale": true,
@@ -184,6 +468,7 @@
               "ZIndex": 100
             },
             {
+              "__version": 0,
               "__type": "PlayerHudComponent",
               "__enabled": true,
               "HealthComp": "4bb38350-1573-432f-aca7-504a01791ba0",
@@ -201,6 +486,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.96279,0.40586,0.14778,1",
@@ -215,6 +501,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.94884,0.39697,0.14122,1",
@@ -224,10 +511,12 @@
     },
     {
       "Id": "a5d164a6-bc7f-46d7-834d-31638599c19c",
-      "Name": "Object",
+      "Name": "Sky",
+      "Rotation": "0.0000000358672,-0.000000000000004046539,0.6017516,0.7986834",
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "SkyBox2D",
           "__enabled": true,
           "SkyMaterial": "materials/sky/duske_sky.vmat",
@@ -242,6 +531,7 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "VolumetricFogVolume",
           "__enabled": true,
           "Bounds": {
@@ -256,16 +546,17 @@
     {
       "Id": "99e88e51-5f3b-442b-8ed6-ca60f8205186",
       "Name": "Sun",
-      "Position": "102.4673,-12.44514,290.4222",
-      "Rotation": "-0.03001446,0.6373703,-0.04342136,0.7687478",
+      "Position": "34.66399,-8.44112,319.601",
+      "Rotation": "-0.02299125,0.6376627,-0.03495011,0.7691796",
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "DirectionalLight",
           "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
+          "LightColor": "0.60441,0.85777,0.93488,1",
           "Shadows": true,
-          "SkyColor": "0.65443,0.77318,0.83256,1"
+          "SkyColor": "0.45309,0.69677,0.8186,1"
         }
       ]
     },
@@ -284,10 +575,24 @@
       "Enabled": true,
       "Components": [
         {
+          "__version": 0,
           "__type": "PointLight",
           "__enabled": true,
           "LightColor": "0.64651,0.36896,0.21951,1",
           "Radius": 800
+        }
+      ]
+    },
+    {
+      "Id": "c91517c6-563f-492b-bb1d-6436978ea435",
+      "Name": "Ambient Lighting",
+      "Position": "0,256,128",
+      "Enabled": true,
+      "Components": [
+        {
+          "__version": 0,
+          "__type": "CamAmbientLightComponent",
+          "__enabled": true
         }
       ]
     }

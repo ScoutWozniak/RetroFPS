@@ -13,6 +13,8 @@ public sealed class PlayerWeaponManagerComponent : Component
 
 	[Property] List<WeaponResource> GiveOnStart { get; set; }
 
+	[Property] GameObject CurrentSpellHand { get; set; }
+
 	WeaponData WeaponFireComponent { 
 		get { 
 			if ( weapons[ActiveWeapon] != null )
