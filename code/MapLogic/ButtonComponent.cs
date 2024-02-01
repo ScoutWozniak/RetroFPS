@@ -14,7 +14,7 @@ public sealed class ButtonComponent : Component, IUsable
 	{
 		if ( TriggerOnce && !Used || !TriggerOnce )
 		{
-			//OnPressed?.Invoke();
+			OnPressed?.Invoke();
 			Used = true;
 			Sound.Play( "button.pressed", Transform.Position );
 			TriggerAll();
@@ -31,8 +31,12 @@ public sealed class ButtonComponent : Component, IUsable
 
 	public void TriggerAll()
 	{
+		if ( ToTrigger == null )
+			return;
 		foreach ( GameObject g in ToTrigger )
 		{
+			if (g==null)
+				continue;
 			foreach ( var comp in g.Components.GetAll<IUsable>() )
 			{
 				comp.OnUse( true, g );

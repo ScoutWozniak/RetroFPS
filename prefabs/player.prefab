@@ -45,7 +45,7 @@
         ],
         "ThrowablePrefab": {
           "_type": "gameobject",
-          "go": "8739a225-0111-43f7-98d2-e14ad21287ce",
+          "go": "a21faff3-fdeb-4485-a7b3-40a8dac7ccbf",
           "prefab": "prefabs/throwableweapon.prefab"
         }
       },
@@ -182,11 +182,11 @@
               },
               {
                 "__type": "RepulsorSpell",
-                "castCooldown": 4,
+                "castCooldown": 2,
                 "PersonalIntensity": 400,
                 "RepulsorPrefab": {
                   "_type": "gameobject",
-                  "go": "5be5defe-1a70-4094-ba63-fa378203fb4c",
+                  "go": "abcd248b-370b-4538-8f40-2f56e1a1a6e1",
                   "prefab": "prefabs/repulsor.prefab"
                 }
               }

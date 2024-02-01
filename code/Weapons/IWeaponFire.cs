@@ -33,14 +33,10 @@ public sealed class HitscanFireEvent : Component, IWeaponFireEvent
 
 	void FireBullet( Vector3 startPos, Vector3 endPos )
 	{
-		var tr = Scene.Trace.Ray( startPos, endPos ).WithoutTags( "playerhitbox", "trigger" ).UseHitboxes().Run();
+		var tr = Scene.Trace.Ray( startPos, endPos ).WithoutTags( "playerhitbox", "trigger", "enemycollider" ).UseHitboxes().Run();
 		if ( tr.Hit )
 		{
-			GameObject hitObject;
-			if ( tr.Hitbox != null )
-				hitObject = tr.Hitbox.GameObject;
-			else
-				hitObject = tr.GameObject;
+			GameObject hitObject = tr.GameObject;
 
 			Log.Info( hitObject );
 			
@@ -51,23 +47,32 @@ public sealed class HitscanFireEvent : Component, IWeaponFireEvent
 				{
 					healthComp.Hurt( Damage );
 				}
+
+				// Impulse the rigidbodies
+				if (hitObject.Components.TryGet<Rigidbody>(out var rb))
+				{
+					Log.Info( "hey" );
+					rb.Velocity -= tr.Normal * 50.0f;
+				}
 			}
 
-
-			SpawnParticles( tr.HitPosition, tr.Normal );
+			SpawnParticles( tr.HitPosition, tr.Normal, (tr.Hitbox != null) );
 
 			if (HitSound != null)
 				Sound.Play( HitSound, tr.HitPosition );
 		}
 	}
 
-	void SpawnParticles(Vector3 pos, Vector3 normal)
+	void SpawnParticles(Vector3 pos, Vector3 normal, bool hitFlesh)
 	{
 		if ( ParticleEffect == null )
 			return;
 
-		var particle = SceneUtility.Instantiate( ParticleEffect );
+		var particle = ParticleEffect.Clone();
 		particle.Transform.Position = pos + normal * 2.0f;
 		particle.Transform.Rotation = Rotation.LookAt( normal );
+
+		if (hitFlesh)
+			particle.Components.Get<ParticleEffect>().Tint = Color.Red;
 	}
 }

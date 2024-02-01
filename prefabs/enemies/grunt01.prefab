@@ -9,7 +9,7 @@
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 70,
-        "IgnoreLayers": "trigger",
+        "IgnoreLayers": "trigger,enemycollider",
         "Radius": 16,
         "StepHeight": 18
       },
@@ -49,7 +49,7 @@
         "MoveSpeed": 200,
         "ProjectilePrefab": {
           "_type": "gameobject",
-          "go": "b82c0268-df75-48f4-aea7-8b6bc2b4b847",
+          "go": "588e3881-7c38-4c93-aae5-a1fccc1ad333",
           "prefab": "prefabs/weapons/projectiles/enemies/knightproj.prefab"
         },
         "State": "E_IDLE",
@@ -69,11 +69,7 @@
           "go": "a6c7551f-0958-4095-8170-b507bac1ec8c",
           "component_type": "SkinnedModelRenderer"
         },
-        "Target": {
-          "_type": "gameobject",
-          "go": "660f60d2-da5b-40e3-83d3-439ad5cfbb37",
-          "prefab": "prefabs/enemies/grunt01.prefab"
-        }
+        "Target": null
       }
     ],
     "Children": [
@@ -850,6 +846,22 @@
                 "Enabled": true
               }
             ]
+          }
+        ]
+      },
+      {
+        "Id": "0c2048bb-f9bc-4b12-bc8e-bee8ecdfd069",
+        "Name": "Collider",
+        "Tags": "enemycollider",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,32",
+            "IsTrigger": false,
+            "Scale": "31,31,64",
+            "Static": false,
+            "Surface": null
           }
         ]
       }

@@ -1,12 +1,11 @@
 {
   "RootObject": {
-    "Id": "d4d98b3d-dc47-4aa1-82c0-652f786e445a",
+    "Id": "a30d585b-8f95-4718-b736-6b2270f76e36",
     "Name": "hitparticles",
     "Enabled": true,
     "Components": [
       {
         "__type": "ParticleEffect",
-        "__enabled": true,
         "Alpha": {
           "Type": "Curve",
           "CurveA": [
@@ -164,7 +163,6 @@
       },
       {
         "__type": "ParticleSpriteRenderer",
-        "__enabled": true,
         "Additive": false,
         "BlurAmount": 0.5,
         "BlurOpacity": 0.91,
@@ -183,12 +181,12 @@
       },
       {
         "__type": "ParticleConeEmitter",
-        "__enabled": true,
         "Burst": 0,
         "ConeAngle": 31.4,
         "ConeFar": 50,
         "ConeNear": 1,
         "Delay": 0,
+        "DestroyOnEnd": false,
         "Duration": 0.1,
         "InVolume": false,
         "Loop": false,
@@ -197,7 +195,6 @@
       },
       {
         "__type": "DestroyAfterComponent",
-        "__enabled": true,
         "Seconds": 2
       }
     ]
