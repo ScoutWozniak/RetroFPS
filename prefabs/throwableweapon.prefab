@@ -1,0 +1,62 @@
+{
+  "RootObject": {
+    "Id": "2bd89c27-7c81-403c-911f-bc73c11f30eb",
+    "Name": "throwableweapon",
+    "Tags": "throwable",
+    "Enabled": true,
+    "Components": [
+      {
+        "__version": 0,
+        "__type": "Rigidbody",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__version": 0,
+        "__type": "SphereCollider",
+        "__enabled": true,
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Radius": 10,
+        "Static": false,
+        "Surface": "data/surfaces/bounce.surface"
+      },
+      {
+        "__version": 0,
+        "__type": "ThrowableWeapon",
+        "__enabled": true,
+        "DropPrefab": "prefabs/weapons/pickup/pistolpickup.prefab"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "b4181b52-6a27-4d42-8177-5e4cc91f8676",
+        "Name": "Collider",
+        "Position": "0,-2.884819,-1.576149",
+        "Enabled": true,
+        "Components": [
+          {
+            "__version": 0,
+            "__type": "ModelRenderer",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/pistol.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

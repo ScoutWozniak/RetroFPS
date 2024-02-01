@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.Citizen;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,16 +36,17 @@ public sealed class EnemyStateComponent : Component
 
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 1200 );
 
+	[Property] CitizenAnimationHelper AnimHelper { get; set; }
+
+	Vector3 WishVelocity { get; set; }
+
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
 		LastAttack = AttackRate;
 
-		// Temp
-		if (Target == null)
-		{
-
-		}
+		AnimHelper.Handedness = CitizenAnimationHelper.Hand.Both;
+		AnimHelper.HoldType = CitizenAnimationHelper.HoldTypes.Pistol;
 	}
 	protected override void OnFixedUpdate()
 	{
@@ -61,6 +63,20 @@ public sealed class EnemyStateComponent : Component
 				break;
 		}
 
+		Log.Info( State );
+
+		if ( CC.IsOnGround )
+		{
+			CC.Velocity = CC.Velocity.WithZ( 0 );
+			CC.Accelerate( WishVelocity );
+			CC.ApplyFriction( 4.0f );
+		}
+		else
+		{
+			CC.Velocity -= Gravity * Time.Delta * 0.5f;
+			CC.Accelerate( WishVelocity.ClampLength( 50 ) );
+			CC.ApplyFriction( 0.1f );
+		}
 
 		CC.Move();
 
@@ -74,16 +90,25 @@ public sealed class EnemyStateComponent : Component
 		}
 	}
 
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		AnimHelper.WithVelocity( CC.Velocity );
+	}
+
 	void StateIdle()
 	{
 		if ( Target == null )
-			return;
+			Target = Scene.Components.Get<PlayerController>(FindMode.InDescendants).GameObject;
 		var rotForward = Transform.Rotation.Forward;
 		var playerForward = (Target.Transform.Position - Transform.Position).Normal;
 
-		if(Vector3.Dot( rotForward, playerForward ) > 0)
+		if(Vector3.Dot( rotForward, playerForward ) > 0.25f)
 		{
-			State = EnemyState.E_SEARCHING;
+			var tr = Scene.Trace.Ray( rotForward + Vector3.Up * 75.0f, playerForward ).WithoutTags("trigger", "enemy")
+				.Run();
+			if ( tr.Hit && tr.GameObject.Tags.Has( "playerhitbox" ) ) 
+				State = EnemyState.E_SEARCHING;
 		}
 	}
 
@@ -97,7 +122,7 @@ public sealed class EnemyStateComponent : Component
 		}
 
 		var forward = (Target.Transform.Position - Transform.Position).Normal;
-		CC.Velocity = forward * MoveSpeed;
+		WishVelocity = forward * MoveSpeed;
 		
 
 		if ((Target.Transform.Position - Transform.Position).Length < 500 && CanAttack())
@@ -120,6 +145,7 @@ public sealed class EnemyStateComponent : Component
 			_ = AttackFunc();
 
 			LastAttack = 0;
+			WishVelocity = 0;
 		}
 	}
 
@@ -134,11 +160,11 @@ public sealed class EnemyStateComponent : Component
 		if ( Enabled )
 		{
 			Sound.Play( "grunt.pain" );
-			var projectile = SceneUtility.Instantiate( ProjectilePrefab );
+			var projectile = ProjectilePrefab.Clone();
 			projectile.Transform.Position = GetProjectileSpawn();
 			projectile.Transform.Rotation = Rotation.LookAt( GetProjectileNormal() );
 
-			State = EnemyState.E_IDLE;
+			State = EnemyState.E_SEARCHING;
 		}
 	}
 

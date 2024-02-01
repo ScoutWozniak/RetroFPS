@@ -4,18 +4,21 @@ public sealed class Repulsor : Component, Component.ITriggerListener
 {
 	public void OnTriggerEnter( Collider other )
 	{
+		var dif = other.Transform.Position;
 		if(other.GameObject.Components.TryGet<CharacterController>(out var cc) && !other.Tags.Has("playerhitbox"))
 		{
-			var dif = cc.Transform.Position - Transform.Position;
-
-			cc.Velocity += dif.Normal * 1000.0f;
+			Log.Info( "test" );
+			cc.Velocity = Transform.Rotation.Forward * 750.0f + Vector3.Up * 200.0f;
 		}
 
 		if ( other.GameObject.Components.TryGet<Rigidbody>( out var rb ) )
 		{
-			var dif = rb.Transform.Position - Transform.Position;
+			rb.Velocity += Transform.Rotation.Forward * 1000.0f;
+		}
 
-			rb.Velocity += dif.Normal * 1000.0f;
+		if ( other.GameObject.Components.TryGet<Rigidbody>( out var proj ) )
+		{
+			rb.Transform.Rotation = Rotation.LookAt( -rb.Transform.Rotation.Forward );
 		}
 	}
 

@@ -1,12 +1,13 @@
 {
   "RootObject": {
-    "Id": "7774dc6c-3d2e-40a0-be04-d4cb6640001d",
+    "Id": "77b1aaaf-d976-4f85-83d5-652fe8f4cdf5",
     "Name": "knightproj",
     "Scale": "0.25,0.25,0.25",
     "Tags": "trigger",
     "Enabled": true,
     "Components": [
       {
+        "__version": 0,
         "__type": "ModelRenderer",
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
@@ -17,6 +18,7 @@
         "Tint": "0.91089,0.64358,0.20743,1"
       },
       {
+        "__version": 0,
         "__type": "SphereCollider",
         "__enabled": true,
         "Center": "0,0,0",
@@ -26,10 +28,17 @@
         "Surface": null
       },
       {
+        "__version": 0,
         "__type": "ProjectileComponent",
         "__enabled": true,
         "Damage": 10,
         "Speed": 50
+      },
+      {
+        "__version": 0,
+        "__type": "DestroyAfterComponent",
+        "__enabled": true,
+        "Seconds": 5
       }
     ]
   },

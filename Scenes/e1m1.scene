@@ -7,9 +7,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "MapInstance",
-          "__enabled": true,
           "MapName": "maps/e1m1.vpk",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
@@ -19,478 +17,19 @@
       "Children": []
     },
     {
-      "Id": "4bb38350-1573-432f-aca7-504a01791ba0",
-      "Name": "Player",
-      "Position": "0,0,32",
-      "Tags": "playerhitbox",
-      "Enabled": true,
-      "Components": [
-        {
-          "__version": 0,
-          "__type": "CharacterController",
-          "__enabled": true,
-          "Acceleration": 10,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "playerhitbox,trigger,player",
-          "Radius": 16,
-          "StepHeight": 18
-        },
-        {
-          "__version": 0,
-          "__type": "BoxCollider",
-          "__enabled": true,
-          "Center": "0,0,32",
-          "IsTrigger": false,
-          "Scale": "30,30,64",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__version": 0,
-          "__type": "PlayerController",
-          "__enabled": true,
-          "AirSpeed": 90,
-          "Eye": "bca3a571-c495-40d1-b05e-21dca2e0b2b4",
-          "Gravity": "0,0,1600",
-          "HeadbobAmmount": 5,
-          "HeadbobSpeed": 5,
-          "RunSpeed": 220,
-          "WalkSpeed": 110
-        },
-        {
-          "__version": 0,
-          "__type": "PlayerWeaponManagerComponent",
-          "__enabled": true,
-          "ActiveWeapon": 0,
-          "CurrentSpellHand": null,
-          "GiveOnStart": [
-            "data/hammer.weapon"
-          ]
-        },
-        {
-          "__version": 0,
-          "__type": "HealthComponent",
-          "__enabled": true,
-          "Armour": 0,
-          "Health": 100,
-          "HurtSound": null,
-          "RemoveOnDeath": true
-        }
-      ],
-      "Children": [
-        {
-          "Id": "bca3a571-c495-40d1-b05e-21dca2e0b2b4",
-          "Name": "Eye",
-          "Position": "0,0,64",
-          "Tags": "playerhitbox",
-          "Enabled": true
-        },
-        {
-          "Id": "a6bf0851-bb91-4898-8444-9dfc300c53c4",
-          "Name": "Camera",
-          "Position": "-320,96.00001,32",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__version": 0,
-              "__type": "CameraComponent",
-              "__enabled": true,
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 90.94,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 1
-            },
-            {
-              "__version": 0,
-              "__type": "Pixelate",
-              "__enabled": false,
-              "Scale": 0.05
-            },
-            {
-              "__version": 0,
-              "__type": "ChromaticAberration",
-              "__enabled": true,
-              "Offset": "4,6,0",
-              "Scale": 0.10000002
-            },
-            {
-              "__version": 0,
-              "__type": "Bloom",
-              "__enabled": true,
-              "BloomColor": {
-                "color": [
-                  {
-                    "c": "1,1,1,1"
-                  },
-                  {
-                    "t": 1,
-                    "c": "1,1,1,1"
-                  }
-                ],
-                "alpha": []
-              },
-              "BloomCurve": [
-                {
-                  "y": 0.5
-                },
-                {
-                  "x": 1,
-                  "y": 1
-                }
-              ],
-              "Mode": "Additive",
-              "Strength": 1.53,
-              "Threshold": 0.5,
-              "ThresholdWidth": 0
-            }
-          ],
-          "Children": [
-            {
-              "Id": "ef333d25-9224-49c0-b820-5ee1520283dd",
-              "Name": "Hud",
-              "Position": "0,0,0",
-              "Tags": "playerhitbox",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__version": 0,
-                  "__type": "ScreenPanel",
-                  "__enabled": true,
-                  "AutoScreenScale": true,
-                  "Opacity": 1,
-                  "Scale": 1,
-                  "ZIndex": 100
-                }
-              ]
-            },
-            {
-              "Id": "36897b44-e03c-4901-aabf-d8c4ced1d84d",
-              "Name": "SpellArm",
-              "Position": "0,0,0",
-              "Tags": "playerhitbox",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__version": 0,
-                  "__type": "SpellArmComponent",
-                  "__enabled": true,
-                  "ViewModel": "bde87f55-2d3f-4af9-89a0-859243793a06"
-                },
-                {
-                  "__version": 0,
-                  "__type": "RepulsorSpell",
-                  "__enabled": true,
-                  "PersonalIntensity": 0,
-                  "RepulsorPrefab": null
-                }
-              ],
-              "Children": [
-                {
-                  "Id": "bde87f55-2d3f-4af9-89a0-859243793a06",
-                  "Name": "v_arms",
-                  "Position": "0,0,0",
-                  "Tags": "playerhitbox",
-                  "Enabled": true,
-                  "Components": [
-                    {
-                      "__version": 0,
-                      "__type": "SkinnedModelRenderer",
-                      "__enabled": true,
-                      "BodyGroups": 18446744073709551615,
-                      "BoneMergeTarget": null,
-                      "CreateBoneObjects": true,
-                      "MaterialGroup": null,
-                      "MaterialOverride": null,
-                      "Model": "models/arms/v_arms.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    }
-                  ],
-                  "Children": [
-                    {
-                      "Id": "6e9617b1-f332-423c-8093-9a6657631e50",
-                      "Name": "Bone",
-                      "Position": "39.99997,0.00003051758,-10.00003",
-                      "Rotation": "0.5000001,-0.4999995,-0.5000002,0.5000003",
-                      "Tags": "playerhitbox",
-                      "Enabled": true,
-                      "Children": [
-                        {
-                          "Id": "023e2ff1-878d-4978-b058-22a718e4ac7d",
-                          "Name": "Bone_001",
-                          "Position": "-0.00003400548,24.869,-0.000008282972",
-                          "Tags": "playerhitbox",
-                          "Enabled": true,
-                          "Children": [
-                            {
-                              "Id": "58387b9f-3a21-465a-9e27-5444f5290bfc",
-                              "Name": "Bone_002",
-                              "Position": "-0.0000341817,25.26325,-0.00003844806",
-                              "Tags": "playerhitbox",
-                              "Enabled": true,
-                              "Children": [
-                                {
-                                  "Id": "7940fe07-0156-4f47-8b89-f8f35c3b9a72",
-                                  "Name": "effectbone",
-                                  "Position": "-0.00002178597,4.867764,-5.000026",
-                                  "Rotation": "-0.7071062,-0.0000001192093,0.0000001064905,0.7071073",
-                                  "Tags": "playerhitbox",
-                                  "Enabled": true,
-                                  "Children": [
-                                    {
-                                      "Id": "fde4bc1c-0c44-4953-a037-397c4e27f156",
-                                      "Name": "effectbone_end",
-                                      "Position": "-17.27512,22.51768,-44.52565",
-                                      "Rotation": "0.135282,0.5271402,0.8225239,-0.1651565",
-                                      "Tags": "playerhitbox",
-                                      "Enabled": true
-                                    },
-                                    {
-                                      "Id": "85dd32f1-0432-4fa6-8aee-3d5b8ce1c058",
-                                      "Name": "Spray",
-                                      "Position": "-0.000004881279,5.122865,0.0000039905",
-                                      "Rotation": "0.00000004390222,-0.000000001915474,0.707107,0.7071065",
-                                      "Tags": "playerhitbox",
-                                      "Enabled": true,
-                                      "Components": [
-                                        {
-                                          "__version": 0,
-                                          "__type": "ParticleEffect",
-                                          "__enabled": true,
-                                          "Alpha": {
-                                            "Type": "Curve",
-                                            "CurveA": [
-                                              {
-                                                "y": 1
-                                              },
-                                              {
-                                                "x": 0.48029557,
-                                                "y": 1,
-                                                "in": 1.5365853,
-                                                "out": -1.5365853
-                                              },
-                                              {
-                                                "x": 1,
-                                                "in": 1.312303,
-                                                "out": -1.312303
-                                              }
-                                            ],
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "ApplyColor": true,
-                                          "ApplyRotation": false,
-                                          "ApplyShape": true,
-                                          "Bounce": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "Brightness": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "Bumpiness": {},
-                                          "Collision": false,
-                                          "CollisionIgnore": null,
-                                          "CollisionRadius": 1,
-                                          "Damping": {},
-                                          "DieOnCollisionChance": {},
-                                          "Force": false,
-                                          "ForceDirection": "0,0,-200",
-                                          "ForceScale": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "Friction": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "Gradient": {
-                                            "Type": "Range",
-                                            "Evaluation": "Particle",
-                                            "GradientA": {
-                                              "color": [
-                                                {
-                                                  "t": 0.5,
-                                                  "c": "1,1,1,1"
-                                                }
-                                              ],
-                                              "alpha": []
-                                            },
-                                            "GradientB": {
-                                              "color": [
-                                                {
-                                                  "t": 0.5,
-                                                  "c": "1,1,1,1"
-                                                }
-                                              ],
-                                              "alpha": []
-                                            },
-                                            "ConstantA": "0.98515,0.92604,0,1",
-                                            "ConstantB": "1,0.22,0,1"
-                                          },
-                                          "Lifetime": {
-                                            "Type": "Range",
-                                            "Evaluation": "Particle",
-                                            "Constants": "0.1,0.1,0,0"
-                                          },
-                                          "MaxParticles": 5000,
-                                          "PerParticleTimeScale": {
-                                            "Constants": "1,0.4,0,0"
-                                          },
-                                          "PreWarm": 0,
-                                          "PushStrength": {},
-                                          "Roll": {
-                                            "Type": "Range",
-                                            "Evaluation": "Particle",
-                                            "Constants": "0,360,0,0"
-                                          },
-                                          "Scale": {
-                                            "Type": "Curve",
-                                            "CurveA": {
-                                              "rangey": "0,3",
-                                              "frames": [
-                                                {
-                                                  "in": -9.333329,
-                                                  "out": 9.333329
-                                                },
-                                                {
-                                                  "x": 0.03325123,
-                                                  "y": 1,
-                                                  "in": -0.056075174,
-                                                  "out": 0.056075174
-                                                },
-                                                {
-                                                  "x": 1,
-                                                  "in": 2.9152544,
-                                                  "out": -2.9152544
-                                                }
-                                              ]
-                                            },
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "SequenceId": {},
-                                          "SequenceSpeed": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "SequenceTime": {
-                                            "Constants": "1,0,0,0"
-                                          },
-                                          "SheetSequence": false,
-                                          "Space": "World",
-                                          "StartVelocity": {
-                                            "Type": "Range",
-                                            "Evaluation": "Particle",
-                                            "Constants": "100,200,0,0"
-                                          },
-                                          "Stretch": {},
-                                          "TimeScale": 1,
-                                          "Tint": "1,1,1,1"
-                                        },
-                                        {
-                                          "__version": 0,
-                                          "__type": "ParticleSpriteRenderer",
-                                          "__enabled": true,
-                                          "Additive": false,
-                                          "BlurAmount": 0.5,
-                                          "BlurOpacity": 0.91,
-                                          "BlurSpacing": 0.73,
-                                          "DepthFeather": 0,
-                                          "FaceVelocity": false,
-                                          "FogStrength": 1,
-                                          "LeadingTrail": true,
-                                          "MotionBlur": false,
-                                          "Opaque": false,
-                                          "RotationOffset": 0,
-                                          "Scale": 1,
-                                          "Shadows": false,
-                                          "SortMode": "Unsorted",
-                                          "Texture": "materials/particles/shapes/star1.vtex"
-                                        },
-                                        {
-                                          "__version": 0,
-                                          "__type": "ParticleSphereEmitter",
-                                          "__enabled": true,
-                                          "Burst": 100,
-                                          "Delay": 0,
-                                          "DestroyOnEnd": false,
-                                          "Duration": 10,
-                                          "Loop": true,
-                                          "OnEdge": false,
-                                          "Radius": 3.99,
-                                          "Rate": 301.17,
-                                          "Velocity": 24.54
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "Id": "8eeec546-2d65-42c4-86d1-8e0589aa47c1",
-                      "Name": "root",
-                      "Position": "0,0,0",
-                      "Rotation": "0.4999998,-0.4999997,-0.4999999,0.5000005",
-                      "Tags": "playerhitbox",
-                      "Enabled": true
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Id": "ee70a161-4967-4e06-96fd-ee7b1d2d075f",
-          "Name": "HUD",
-          "Position": "0,0,0",
-          "Tags": "playerhitbox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__version": 0,
-              "__type": "ScreenPanel",
-              "__enabled": true,
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 100
-            },
-            {
-              "__version": 0,
-              "__type": "PlayerHudComponent",
-              "__enabled": true,
-              "HealthComp": "4bb38350-1573-432f-aca7-504a01791ba0",
-              "MyStringValue": "Hello World!",
-              "WeaponManager": "4bb38350-1573-432f-aca7-504a01791ba0"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "1f85b84e-2f4a-4cd3-b0ce-9a3b895a1050",
       "Name": "Point Light",
       "Position": "480,128,96",
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "PointLight",
-          "__enabled": true,
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
           "LightColor": "0.96279,0.40586,0.14778,1",
-          "Radius": 400
+          "Radius": 400,
+          "Shadows": true
         }
       ]
     },
@@ -501,11 +40,13 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "PointLight",
-          "__enabled": true,
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
           "LightColor": "0.94884,0.39697,0.14122,1",
-          "Radius": 400
+          "Radius": 400,
+          "Shadows": true
         }
       ]
     },
@@ -516,30 +57,9 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "SkyBox2D",
-          "__enabled": true,
           "SkyMaterial": "materials/sky/duske_sky.vmat",
           "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "36c8dfcb-a77c-4682-8ae0-919d65c87877",
-      "Name": "Fog",
-      "Position": "64,0,128",
-      "Enabled": true,
-      "Components": [
-        {
-          "__version": 0,
-          "__type": "VolumetricFogVolume",
-          "__enabled": true,
-          "Bounds": {
-            "Mins": "-500,-500,-500",
-            "Maxs": "500,500,500"
-          },
-          "FalloffExponent": 1,
-          "Strength": 1
         }
       ]
     },
@@ -547,16 +67,19 @@
       "Id": "99e88e51-5f3b-442b-8ed6-ca60f8205186",
       "Name": "Sun",
       "Position": "34.66399,-8.44112,319.601",
-      "Rotation": "-0.02299125,0.6376627,-0.03495011,0.7691796",
+      "Rotation": "-0.01626106,-0.2947357,-0.003388061,-0.9554344",
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "DirectionalLight",
-          "__enabled": true,
-          "LightColor": "0.60441,0.85777,0.93488,1",
+          "FogMode": "Enabled",
+          "FogStrength": 0,
+          "LightColor": "0.92558,0.4371,0.28844,1",
           "Shadows": true,
-          "SkyColor": "0.45309,0.69677,0.8186,1"
+          "SkyColor": "0.01509,0.00818,0.03256,1"
+        },
+        {
+          "__type": "CamAmbientLightComponent"
         }
       ]
     },
@@ -575,24 +98,209 @@
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
           "__type": "PointLight",
-          "__enabled": true,
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
           "LightColor": "0.64651,0.36896,0.21951,1",
-          "Radius": 800
+          "Radius": 800,
+          "Shadows": true
         }
       ]
     },
     {
-      "Id": "c91517c6-563f-492b-bb1d-6436978ea435",
-      "Name": "Ambient Lighting",
-      "Position": "0,256,128",
+      "Id": "3e430cc0-2c6c-4059-8830-cedc0ce707fd",
+      "Name": "player",
+      "Tags": "playerhitbox",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "269cf3b2-1503-477b-b5f0-e6b821b635c7",
+      "Name": "Door01",
+      "Position": "640,0.00000001134139,128",
+      "Rotation": "0.000000003684539,0.000000003129983,0.7071068,0.7071068",
       "Enabled": true,
       "Components": [
         {
-          "__version": 0,
-          "__type": "CamAmbientLightComponent",
-          "__enabled": true
+          "__type": "DoorComponent",
+          "CloseAfter": 5,
+          "CloseAfterOpen": true,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 250,
+          "MoveSpeed": 0.5,
+          "Opened": false
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "256,32,256",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent"
+        }
+      ]
+    },
+    {
+      "Id": "e56e4530-5c3b-40e6-b19b-091120009421",
+      "Name": "Door01 (1)",
+      "Position": "1536,-768,216",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DoorComponent",
+          "CloseAfter": 5,
+          "CloseAfterOpen": true,
+          "KeyNeeded": "None",
+          "MoveDir": "0,0,1",
+          "MoveLength": 250,
+          "MoveSpeed": 0.5,
+          "Opened": false
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/keydoor.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "256,32,256",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "UsableComponent"
+        }
+      ]
+    },
+    {
+      "Id": "a1e2e874-bf42-49df-af33-8ddfa7710b2c",
+      "Name": "Enemy",
+      "Position": "1248,-32,0.00002486812",
+      "Rotation": "0.0000000594827,0.000000002693774,1,-0.00000004371139",
+      "Tags": "enemy",
+      "__Prefab": "prefabs/enemies/grunt01.prefab"
+    },
+    {
+      "Id": "c12cc9f8-ed8c-47d8-8791-09c17bef322c",
+      "Name": "crate",
+      "Position": "1088,128,48",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "e5e7c00f-8aad-44e8-9cb3-65f9a9104034",
+      "Name": "crate (1)",
+      "Position": "1312,-128,32",
+      "Scale": "0.75,0.75,0.75",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/crate.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "d8830f2f-841a-4554-aa73-acd78488c740",
+      "Name": "Point Light",
+      "Position": "1539.381,-1307.951,296.7849",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "Id": "a125ced1-553b-4cea-8d69-d784e75098c9",
+      "Name": "Point Light (2)",
+      "Position": "1539.381,-1652.709,296.7849",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "Id": "4fe38106-ad8a-4bc4-b7d4-e26d152b732c",
+      "Name": "Point Light",
+      "Position": "1536,-459.7742,192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400,
+          "Shadows": true
         }
       ]
     }
@@ -608,5 +316,6 @@
   },
   "Title": "e1m1",
   "Description": "",
+  "LastSaved": "2024-02-01T18:40:09.0886164\u002B10:00",
   "__references": []
 }

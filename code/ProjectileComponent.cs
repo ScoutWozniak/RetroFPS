@@ -8,16 +8,17 @@ public sealed class ProjectileComponent : Component, Component.ITriggerListener
 	public void OnTriggerEnter( Collider other )
 	{
 		HealthComponent health;
-		if (other.GameObject.Components.TryGet( out health))
+		if (other.GameObject.Components.TryGet( out health, FindMode.EverythingInSelfAndDescendants))
 		{
 			health.Hurt( Damage );
+			Log.Info( health.Health );
 			GameObject.Destroy();
 		}
 	}
 
 	public void OnTriggerExit( Collider other )
 	{
-		throw new System.NotImplementedException();
+
 	}
 
 	protected override void OnFixedUpdate()

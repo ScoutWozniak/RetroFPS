@@ -34,7 +34,8 @@
         "trigger": "Trigger",
         "ladder": "Ignore",
         "water": "Trigger",
-        "playerhitbox": "Ignore"
+        "playerhitbox": "Ignore",
+        "throwable": "Collide"
       },
       "Pairs": [
         {
@@ -66,6 +67,11 @@
           "a": "trigger",
           "b": "playerhitbox",
           "r": "Trigger"
+        },
+        {
+          "a": "playerhitbox",
+          "b": "throwable",
+          "r": "Ignore"
         }
       ]
     }

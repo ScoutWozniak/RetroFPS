@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime;
 
-public class PlayerController : Component, INetworkSerializable
+public class PlayerController : Component
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 1200 );
 
@@ -171,18 +171,6 @@ public class PlayerController : Component, INetworkSerializable
 
 		//if ( Input.Down( "Run" ) ) WishVelocity *= WalkSpeed;
 		//else WishVelocity *= RunSpeed;
-	}
-
-	public void Write( ref ByteStream stream )
-	{
-		stream.Write( IsRunning );
-		stream.Write( EyeAngles );
-	}
-
-	public void Read( ByteStream stream )
-	{
-		IsRunning = stream.Read<bool>();
-		EyeAngles = stream.Read<Angles>();
 	}
 
 	public void SetEyeAngles(Angles angle)

@@ -1,25 +1,21 @@
 {
   "RootObject": {
-    "Id": "b9e544c3-9139-4358-ad20-3d86603a3340",
+    "Id": "3e430cc0-2c6c-4059-8830-cedc0ce707fd",
     "Name": "player",
     "Tags": "playerhitbox",
     "Enabled": true,
     "Components": [
       {
-        "__version": 0,
         "__type": "CharacterController",
-        "__enabled": true,
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 64,
-        "IgnoreLayers": "playerhitbox,trigger,player",
+        "IgnoreLayers": "playerhitbox,trigger,player,throwable",
         "Radius": 16,
         "StepHeight": 18
       },
       {
-        "__version": 0,
         "__type": "BoxCollider",
-        "__enabled": true,
         "Center": "0,0,32",
         "IsTrigger": false,
         "Scale": "30,30,64",
@@ -27,54 +23,56 @@
         "Surface": null
       },
       {
-        "__version": 0,
         "__type": "PlayerController",
-        "__enabled": true,
-        "AirSpeed": 90,
-        "Eye": "853bb7b0-4da3-4716-9077-590919293063",
+        "AirSpeed": 80,
+        "Eye": {
+          "_type": "gameobject",
+          "go": "09570444-e7cd-4089-b266-be9c6910f3c8"
+        },
         "Gravity": "0,0,1600",
         "HeadbobAmmount": 5,
         "HeadbobSpeed": 5,
-        "RunSpeed": 220,
+        "RunSpeed": 330,
         "WalkSpeed": 110
       },
       {
-        "__version": 0,
         "__type": "PlayerWeaponManagerComponent",
-        "__enabled": true,
         "ActiveWeapon": 0,
-        "CurrentSpellHand": null,
         "GiveOnStart": [
           "data/hammer.weapon"
-        ]
+        ],
+        "ThrowablePrefab": {
+          "_type": "gameobject",
+          "go": "aa5503ea-e4fc-48ca-9bb7-3b8439ff26db",
+          "prefab": "prefabs/throwableweapon.prefab"
+        }
       },
       {
-        "__version": 0,
         "__type": "HealthComponent",
-        "__enabled": true,
         "Armour": 0,
         "Health": 100,
         "HurtSound": null,
         "RemoveOnDeath": true
+      },
+      {
+        "__type": "KeyInvComponent"
       }
     ],
     "Children": [
       {
-        "Id": "853bb7b0-4da3-4716-9077-590919293063",
+        "Id": "09570444-e7cd-4089-b266-be9c6910f3c8",
         "Name": "Eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "a73993d6-c014-4ed0-a00c-34203f9af984",
+        "Id": "b4bf1033-7af5-4596-95e8-0592c5a4e632",
         "Name": "Camera",
         "Position": "-320,96.00001,32",
         "Enabled": true,
         "Components": [
           {
-            "__version": 0,
             "__type": "CameraComponent",
-            "__enabled": true,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "All",
             "FieldOfView": 90.94,
@@ -90,22 +88,16 @@
             "ZNear": 1
           },
           {
-            "__version": 0,
             "__type": "Pixelate",
-            "__enabled": false,
             "Scale": 0.05
           },
           {
-            "__version": 0,
             "__type": "ChromaticAberration",
-            "__enabled": true,
             "Offset": "4,6,0",
             "Scale": 0.10000002
           },
           {
-            "__version": 0,
             "__type": "Bloom",
-            "__enabled": true,
             "BloomColor": {
               "color": [
                 {
@@ -131,57 +123,75 @@
             "Strength": 1.53,
             "Threshold": 0.5,
             "ThresholdWidth": 0
+          },
+          {
+            "__type": "CamAmbientLightComponent"
           }
         ],
         "Children": [
           {
-            "Id": "61cb0879-1974-403f-99d2-4a37d622c3ab",
+            "Id": "0a6671f8-3d27-4306-8a8b-a49602da902f",
             "Name": "Hud",
             "Position": "0,0,0",
             "Enabled": true,
             "Components": [
               {
-                "__version": 0,
                 "__type": "ScreenPanel",
-                "__enabled": true,
                 "AutoScreenScale": true,
                 "Opacity": 1,
                 "Scale": 1,
                 "ZIndex": 100
+              },
+              {
+                "__type": "PlayerHudComponent",
+                "HealthComp": {
+                  "_type": "component",
+                  "go": "3e430cc0-2c6c-4059-8830-cedc0ce707fd",
+                  "component_type": "HealthComponent"
+                },
+                "MyStringValue": "Hello World!",
+                "WeaponManager": {
+                  "_type": "component",
+                  "go": "3e430cc0-2c6c-4059-8830-cedc0ce707fd",
+                  "component_type": "PlayerWeaponManagerComponent"
+                }
               }
             ]
           },
           {
-            "Id": "e6c965f7-911a-4788-a0d2-e8c5db4bcd3b",
+            "Id": "0c4f65ad-5bd8-4b0b-9cc3-2d9754c2061e",
             "Name": "SpellArm",
-            "Position": "0,0,0",
+            "Position": "0,16.42804,-9.34951",
             "Enabled": true,
             "Components": [
               {
-                "__version": 0,
                 "__type": "SpellArmComponent",
-                "__enabled": true,
-                "ViewModel": "89ba90b8-011f-47b2-bc82-5de1d2053e90"
+                "ViewModel": {
+                  "_type": "component",
+                  "go": "5e4803fe-68cd-47db-9db0-c0e348d6e0d5",
+                  "component_type": "SkinnedModelRenderer"
+                }
               },
               {
-                "__version": 0,
                 "__type": "RepulsorSpell",
-                "__enabled": true,
-                "PersonalIntensity": 500,
-                "RepulsorPrefab": "prefabs/repulsor.prefab"
+                "castCooldown": 0,
+                "PersonalIntensity": 400,
+                "RepulsorPrefab": {
+                  "_type": "gameobject",
+                  "go": "a1575ca8-2e0b-460f-8c79-0be479af1786",
+                  "prefab": "prefabs/repulsor.prefab"
+                }
               }
             ],
             "Children": [
               {
-                "Id": "89ba90b8-011f-47b2-bc82-5de1d2053e90",
+                "Id": "5e4803fe-68cd-47db-9db0-c0e348d6e0d5",
                 "Name": "v_arms",
                 "Position": "0,0,0",
                 "Enabled": true,
                 "Components": [
                   {
-                    "__version": 0,
                     "__type": "SkinnedModelRenderer",
-                    "__enabled": true,
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": null,
                     "CreateBoneObjects": true,
@@ -194,49 +204,55 @@
                 ],
                 "Children": [
                   {
-                    "Id": "9abceaee-e357-47dd-9ecc-995f95f11e78",
+                    "Id": "066b3700-0b4a-4abc-b0e1-cf13b1bbd790",
                     "Name": "Bone",
-                    "Position": "39.99997,0.00003051758,-10.00003",
-                    "Rotation": "0.5000001,-0.4999995,-0.5000002,0.5000003",
+                    "Position": "39.99997,0.00003051758,-10.00004",
+                    "Rotation": "0.4999998,-0.4999996,-0.5000002,0.5000005",
                     "Enabled": true,
                     "Children": [
                       {
-                        "Id": "6a0d4074-aab5-4a1e-9fef-dba99c3d025a",
+                        "Id": "e579a35b-cd05-4216-bf51-287931167654",
                         "Name": "Bone_001",
-                        "Position": "-0.00003400548,24.869,-0.000008282972",
+                        "Position": "-0.00001081184,24.869,-0.000031389",
                         "Enabled": true,
                         "Children": [
                           {
-                            "Id": "78a5b30f-37fa-4b4d-b992-3efe6c2c54a0",
+                            "Id": "ae6b3909-08d4-49b8-8611-d0eb551a35ba",
                             "Name": "Bone_002",
-                            "Position": "-0.0000341817,25.26325,-0.00003844806",
+                            "Position": "-0.000009235528,25.26325,-0.000030919",
                             "Enabled": true,
                             "Children": [
                               {
-                                "Id": "6f975bd6-55cd-4f6c-821c-aa7beed7ed14",
+                                "Id": "68905b9f-b674-4341-b1cf-6e042bfe9aaf",
                                 "Name": "effectbone",
-                                "Position": "-0.00002178597,4.867764,-5.000026",
-                                "Rotation": "-0.7071062,-0.0000001192093,0.0000001064905,0.7071073",
+                                "Position": "-0.00002697281,4.867765,-5.000023",
+                                "Rotation": "-0.7071062,0.0000003278255,0.00000009685759,0.7071073",
                                 "Enabled": true,
                                 "Children": [
                                   {
-                                    "Id": "b2ded198-ff7b-4d15-b6bd-7b73049b3c60",
+                                    "Id": "e4f6b5cd-d2fc-417e-a43a-e2f41e0832ef",
                                     "Name": "effectbone_end",
-                                    "Position": "-17.27512,22.51768,-44.52565",
-                                    "Rotation": "0.135282,0.5271402,0.8225239,-0.1651565",
-                                    "Enabled": true
+                                    "Position": "-0.00002157686,10.00003,-0.000004003964",
+                                    "Enabled": true,
+                                    "Children": [
+                                      {
+                                        "Id": "ad92b806-6d83-439d-b1a9-9bb81ab02fd8",
+                                        "Name": "effectbone_end_end",
+                                        "Position": "-12.56299,7.743629,-35.76449",
+                                        "Rotation": "0.1372402,0.5224751,0.8279974,-0.1503509",
+                                        "Enabled": true
+                                      }
+                                    ]
                                   },
                                   {
-                                    "Id": "6964cc9e-7f04-43bf-912a-ac272c9e1c5f",
+                                    "Id": "76940322-64b5-4bd8-8129-33f402aed9e5",
                                     "Name": "Spray",
                                     "Position": "-0.000004881279,5.122865,0.0000039905",
                                     "Rotation": "0.00000004390222,-0.000000001915474,0.707107,0.7071065",
                                     "Enabled": true,
                                     "Components": [
                                       {
-                                        "__version": 0,
                                         "__type": "ParticleEffect",
-                                        "__enabled": true,
                                         "Alpha": {
                                           "Type": "Curve",
                                           "CurveA": [
@@ -363,9 +379,7 @@
                                         "Tint": "0.35907,0.89767,0.86177,1"
                                       },
                                       {
-                                        "__version": 0,
                                         "__type": "ParticleSpriteRenderer",
-                                        "__enabled": true,
                                         "Additive": false,
                                         "BlurAmount": 0.5,
                                         "BlurOpacity": 0.91,
@@ -383,9 +397,7 @@
                                         "Texture": "materials/particles/shapes/circle1.vtex"
                                       },
                                       {
-                                        "__version": 0,
                                         "__type": "ParticleSphereEmitter",
-                                        "__enabled": true,
                                         "Burst": 100,
                                         "Delay": 0,
                                         "DestroyOnEnd": false,
@@ -407,39 +419,15 @@
                     ]
                   },
                   {
-                    "Id": "a3761a3d-5316-4724-ba82-0589e09724e7",
+                    "Id": "e9c474bd-0a77-4122-a5ce-7af1d1d5bd80",
                     "Name": "root",
-                    "Position": "0,0,0.000003814697",
-                    "Rotation": "0.4999998,-0.4999997,-0.4999999,0.5000005",
+                    "Position": "0,0,0.000007629395",
+                    "Rotation": "0.4999997,-0.4999996,-0.5000002,0.5000005",
                     "Enabled": true
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "Id": "d870d38e-92b1-4be1-af53-0ba688b5ba10",
-        "Name": "HUD",
-        "Enabled": true,
-        "Components": [
-          {
-            "__version": 0,
-            "__type": "ScreenPanel",
-            "__enabled": true,
-            "AutoScreenScale": true,
-            "Opacity": 1,
-            "Scale": 1,
-            "ZIndex": 100
-          },
-          {
-            "__version": 0,
-            "__type": "PlayerHudComponent",
-            "__enabled": true,
-            "HealthComp": "b9e544c3-9139-4358-ad20-3d86603a3340",
-            "MyStringValue": "Hello World!",
-            "WeaponManager": "b9e544c3-9139-4358-ad20-3d86603a3340"
           }
         ]
       }

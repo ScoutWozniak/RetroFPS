@@ -23,7 +23,7 @@ public sealed class DeathExplosionEvent : Component, IDeathEvent
 		{
 			for (int i = 0; i < SpawnAmmount; i++)
 			{
-				var go = SceneUtility.Instantiate( Prefab, GameObject.Transform.World );
+				var go = Prefab.Clone( Transform.Position );
 				go.Enabled = true;
 				go.Transform.Position += Vector3.Up * 50.0f;
 			}

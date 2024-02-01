@@ -13,7 +13,7 @@ public sealed class PlayerWeaponManagerComponent : Component
 
 	[Property] List<WeaponResource> GiveOnStart { get; set; }
 
-	[Property] GameObject CurrentSpellHand { get; set; }
+	[Property] GameObject ThrowablePrefab { get; set; }
 
 	WeaponData WeaponFireComponent { 
 		get { 
@@ -77,6 +77,16 @@ public sealed class PlayerWeaponManagerComponent : Component
 		}
 	}
 
+	protected override void OnFixedUpdate()
+	{
+		base.OnFixedUpdate();
+		// Throw the weapon - We can't throw the knife!
+		if (Input.Pressed("Drop") && ActiveWeapon != 0)
+		{
+			ThrowActiveWeapon();
+		}
+	}
+
 	public int GetActiveAmmo()
 	{
 		if ( WeaponFireComponent != null && AmmoAmmount[(int)WeaponFireComponent.Ammo] != 0 )
@@ -88,6 +98,18 @@ public sealed class PlayerWeaponManagerComponent : Component
 	public void AddAmmo( AmmoType type, int ammount )
 	{
 		AmmoAmmount[(int)type] += ammount;
+	}
+
+	void ThrowActiveWeapon()
+	{
+		
+		weapons[ActiveWeapon].Destroy();
+		weapons[ActiveWeapon] = null;
+		SetActiveWeapon( 0 );
+
+		// SPAWN HACK 
+		var go = ThrowablePrefab.Clone( Scene.Camera.Transform.Position );
+		go.Components.Get<Rigidbody>().Velocity =  Scene.Camera.Transform.Rotation.Forward * 750.0f;
 	}
 }
 
