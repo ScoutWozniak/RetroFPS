@@ -10,7 +10,7 @@ public sealed class HealthComponent : Component
 	public void Hurt(float damage)
 	{
 		Health -= damage;
-		
+		Log.Info( damage );
 
 		if (Health <= 0)
 		{

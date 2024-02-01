@@ -7,7 +7,7 @@
     "Components": [
       {
         "__type": "CharacterController",
-        "Acceleration": 10,
+        "Acceleration": 15.1,
         "GroundAngle": 45,
         "Height": 64,
         "IgnoreLayers": "playerhitbox,trigger,player,throwable",
@@ -32,18 +32,20 @@
         "Gravity": "0,0,1600",
         "HeadbobAmmount": 5,
         "HeadbobSpeed": 5,
-        "RunSpeed": 330,
+        "RunSpeed": 500,
         "WalkSpeed": 110
       },
       {
         "__type": "PlayerWeaponManagerComponent",
         "ActiveWeapon": 0,
         "GiveOnStart": [
-          "data/hammer.weapon"
+          "data/hammer.weapon",
+          "data/pistol.weapon",
+          "data/rifle.weapon"
         ],
         "ThrowablePrefab": {
           "_type": "gameobject",
-          "go": "aa5503ea-e4fc-48ca-9bb7-3b8439ff26db",
+          "go": "8739a225-0111-43f7-98d2-e14ad21287ce",
           "prefab": "prefabs/throwableweapon.prefab"
         }
       },
@@ -68,7 +70,6 @@
       {
         "Id": "b4bf1033-7af5-4596-95e8-0592c5a4e632",
         "Name": "Camera",
-        "Position": "-320,96.00001,32",
         "Enabled": true,
         "Components": [
           {
@@ -126,13 +127,19 @@
           },
           {
             "__type": "CamAmbientLightComponent"
+          },
+          {
+            "__type": "ColorAdjustments",
+            "Brightness": 1,
+            "Contrast": 1,
+            "HueRotate": 0,
+            "Saturation": 1.1
           }
         ],
         "Children": [
           {
             "Id": "0a6671f8-3d27-4306-8a8b-a49602da902f",
             "Name": "Hud",
-            "Position": "0,0,0",
             "Enabled": true,
             "Components": [
               {
@@ -144,6 +151,7 @@
               },
               {
                 "__type": "PlayerHudComponent",
+                "CrossHairPath": "ui/images/crosshairs/crosshair01.vtex",
                 "HealthComp": {
                   "_type": "component",
                   "go": "3e430cc0-2c6c-4059-8830-cedc0ce707fd",
@@ -174,11 +182,11 @@
               },
               {
                 "__type": "RepulsorSpell",
-                "castCooldown": 0,
+                "castCooldown": 4,
                 "PersonalIntensity": 400,
                 "RepulsorPrefab": {
                   "_type": "gameobject",
-                  "go": "a1575ca8-2e0b-460f-8c79-0be479af1786",
+                  "go": "5be5defe-1a70-4094-ba63-fa378203fb4c",
                   "prefab": "prefabs/repulsor.prefab"
                 }
               }
@@ -206,39 +214,39 @@
                   {
                     "Id": "066b3700-0b4a-4abc-b0e1-cf13b1bbd790",
                     "Name": "Bone",
-                    "Position": "39.99997,0.00003051758,-10.00004",
+                    "Position": "39.99996,0.00002861023,-10.00004",
                     "Rotation": "0.4999998,-0.4999996,-0.5000002,0.5000005",
                     "Enabled": true,
                     "Children": [
                       {
                         "Id": "e579a35b-cd05-4216-bf51-287931167654",
                         "Name": "Bone_001",
-                        "Position": "-0.00001081184,24.869,-0.000031389",
+                        "Position": "-0.000008904494,24.869,-0.000031389",
                         "Enabled": true,
                         "Children": [
                           {
                             "Id": "ae6b3909-08d4-49b8-8611-d0eb551a35ba",
                             "Name": "Bone_002",
-                            "Position": "-0.000009235528,25.26325,-0.000030919",
+                            "Position": "-0.000007328176,25.26325,-0.0000385484",
                             "Enabled": true,
                             "Children": [
                               {
                                 "Id": "68905b9f-b674-4341-b1cf-6e042bfe9aaf",
                                 "Name": "effectbone",
-                                "Position": "-0.00002697281,4.867765,-5.000023",
+                                "Position": "-0.00002506546,4.867765,-5.000027",
                                 "Rotation": "-0.7071062,0.0000003278255,0.00000009685759,0.7071073",
                                 "Enabled": true,
                                 "Children": [
                                   {
                                     "Id": "e4f6b5cd-d2fc-417e-a43a-e2f41e0832ef",
                                     "Name": "effectbone_end",
-                                    "Position": "-0.00002157686,10.00003,-0.000004003964",
+                                    "Position": "-0.00001966951,10.00002,-0.000004003961",
                                     "Enabled": true,
                                     "Children": [
                                       {
                                         "Id": "ad92b806-6d83-439d-b1a9-9bb81ab02fd8",
                                         "Name": "effectbone_end_end",
-                                        "Position": "-12.56299,7.743629,-35.76449",
+                                        "Position": "-12.563,7.74364,-35.76449",
                                         "Rotation": "0.1372402,0.5224751,0.8279974,-0.1503509",
                                         "Enabled": true
                                       }
@@ -421,7 +429,7 @@
                   {
                     "Id": "e9c474bd-0a77-4122-a5ce-7af1d1d5bd80",
                     "Name": "root",
-                    "Position": "0,0,0.000007629395",
+                    "Position": "0.000006103515,0.000001907349,0.000008583069",
                     "Rotation": "0.4999997,-0.4999996,-0.5000002,0.5000005",
                     "Enabled": true
                   }

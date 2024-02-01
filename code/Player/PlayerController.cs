@@ -129,7 +129,7 @@ public class PlayerController : Component
 			cc.ApplyFriction( 4.0f );
 			var curSpeed = Vector3.Dot( WishVelocity, cc.Velocity );
 			var addSpeed = Math.Clamp( RunSpeed - curSpeed, 0, RunSpeed * 10.0f );
-			cc.Velocity += addSpeed * WishVelocity;
+			cc.Accelerate( addSpeed * WishVelocity );
 		}
 		else
 		{
@@ -167,7 +167,7 @@ public class PlayerController : Component
 
 		WishVelocity = WishVelocity.WithZ( 0 );
 
-		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
+		//	if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
 		//if ( Input.Down( "Run" ) ) WishVelocity *= WalkSpeed;
 		//else WishVelocity *= RunSpeed;

@@ -36,15 +36,24 @@ public sealed class HitscanFireEvent : Component, IWeaponFireEvent
 		var tr = Scene.Trace.Ray( startPos, endPos ).WithoutTags( "playerhitbox", "trigger" ).UseHitboxes().Run();
 		if ( tr.Hit )
 		{
-			//SpawnHitParticles( tr.HitPosition, tr.Normal );
-			if ( tr.GameObject != null )
+			GameObject hitObject;
+			if ( tr.Hitbox != null )
+				hitObject = tr.Hitbox.GameObject;
+			else
+				hitObject = tr.GameObject;
+
+			Log.Info( hitObject );
+			
+			if ( hitObject != null )
 			{
-				var healthComp = tr.GameObject.Components.Get<HealthComponent>( FindMode.EnabledInSelfAndChildren );
+				var healthComp = hitObject.Components.Get<HealthComponent>();
 				if ( healthComp != null )
 				{
 					healthComp.Hurt( Damage );
 				}
 			}
+
+
 			SpawnParticles( tr.HitPosition, tr.Normal );
 
 			if (HitSound != null)

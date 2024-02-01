@@ -57,7 +57,7 @@ public sealed class RepulsorSpell : Component, ISpell
 	protected override void OnFixedUpdate()
 	{
 		//temporary debugging
-		Log.Info(currentCooldown);
+		//Log.Info(currentCooldown);
 		UpdateCooldown();
 	}
 

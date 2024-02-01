@@ -16,6 +16,19 @@ PlayerHudComponent {
 		flex-direction: column;
 	}
 
+	.crosshair {
+		position: absolute;
+    opacity: 1;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% -50% );
+    transition: all 0.2s linear;
+    z-index: -1;
+
+	}
+
 	.vitals {
 		position: absolute;
 		left: 200px;
@@ -36,8 +49,8 @@ PlayerHudComponent {
 		padding: 10px 20px;
 		color: white;
 		font-weight: bolder;
-		font-size: 30px;
-		font-family: poppins;
+		font-size: 64px;
+		font-family: 'Pixel Operator';
 		justify-content: center;
 		align-items: center;
 		gap: 16px;

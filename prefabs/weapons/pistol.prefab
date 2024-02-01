@@ -1,44 +1,54 @@
 {
   "RootObject": {
-    "Id": "7d5d3575-3916-4790-bab3-d021565bbb44",
+    "Id": "71f5d36d-51bc-480e-b0ce-09f54548fb51",
     "Name": "pistol",
     "Tags": "viewmodel",
     "Enabled": true,
     "Components": [
       {
         "__type": "WeaponData",
-        "__enabled": true,
         "FireDelay": 0.1,
         "FireSound": null,
         "InputType": "Pressed",
-        "Viewmodel": "d1bb7adb-5acb-49dd-b572-3351d06c7667"
+        "Viewmodel": {
+          "_type": "component",
+          "go": "07eb50ac-9ed4-4ad5-a015-73f4448a31e8",
+          "component_type": "ViewmodelComponent"
+        }
       },
       {
         "__type": "HitscanFireEvent",
-        "__enabled": true,
+        "Damage": 10,
         "FireSound": "sounds/weapons/pistol/pistol.fire.sound",
         "HitSound": null,
         "Ignore": "trigger,playerhitbox",
-        "ParticleEffect": "prefabs/particles/hitparticles.prefab",
+        "ParticleEffect": {
+          "_type": "gameobject",
+          "go": "d1381287-7fa0-4059-8a37-4345ecf7684e",
+          "prefab": "prefabs/particles/hitparticles.prefab"
+        },
         "Range": 10000
       }
     ],
     "Children": [
       {
-        "Id": "d1bb7adb-5acb-49dd-b572-3351d06c7667",
+        "Id": "07eb50ac-9ed4-4ad5-a015-73f4448a31e8",
         "Name": "Holder",
         "Enabled": true,
         "Components": [
           {
             "__type": "ViewmodelComponent",
-            "__enabled": true,
             "FireGraphValue": "b_fire",
-            "Renderer": "68189bba-9598-4c09-9be3-bd0cb2d1bbc3"
+            "Renderer": {
+              "_type": "component",
+              "go": "3e693967-a2c3-4290-a71c-12ed12311a0d",
+              "component_type": "SkinnedModelRenderer"
+            }
           }
         ],
         "Children": [
           {
-            "Id": "68189bba-9598-4c09-9be3-bd0cb2d1bbc3",
+            "Id": "3e693967-a2c3-4290-a71c-12ed12311a0d",
             "Name": "Viewmodel",
             "Position": "18.35507,-6.055283,-8.462614",
             "Rotation": "-0.00000003989908,-0.000000001021777,-0.6503825,0.759607",
@@ -46,7 +56,6 @@
             "Components": [
               {
                 "__type": "SkinnedModelRenderer",
-                "__enabled": true,
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": null,
                 "CreateBoneObjects": false,

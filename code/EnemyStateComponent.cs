@@ -63,7 +63,7 @@ public sealed class EnemyStateComponent : Component
 				break;
 		}
 
-		Log.Info( State );
+		//Log.Info( State );
 
 		if ( CC.IsOnGround )
 		{
@@ -100,15 +100,23 @@ public sealed class EnemyStateComponent : Component
 	{
 		if ( Target == null )
 			Target = Scene.Components.Get<PlayerController>(FindMode.InDescendants).GameObject;
-		var rotForward = Transform.Rotation.Forward;
+
+
+
 		var playerForward = (Target.Transform.Position - Transform.Position).Normal;
 
-		if(Vector3.Dot( rotForward, playerForward ) > 0.25f)
+		var startPos = Vector3.Up * 64.0f + Transform.Position;
+		var endPos = playerForward * 1000.0f + startPos;
+
+		if (Vector3.Dot( Transform.Rotation.Forward, playerForward ) > 0.25f)
 		{
-			var tr = Scene.Trace.Ray( rotForward + Vector3.Up * 75.0f, playerForward ).WithoutTags("trigger", "enemy")
+			var tr = Scene.Trace.Ray( startPos, endPos ).WithoutTags("trigger", "enemy")
 				.Run();
-			if ( tr.Hit && tr.GameObject.Tags.Has( "playerhitbox" ) ) 
+
+			if ( tr.Hit && tr.GameObject.Tags.Has( "playerhitbox" ) )
+			{
 				State = EnemyState.E_SEARCHING;
+			}
 		}
 	}
 

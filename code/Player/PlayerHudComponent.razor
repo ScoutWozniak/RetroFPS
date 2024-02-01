@@ -21,16 +21,20 @@
 
 		</div>
 
-		<div class="armor">
+@* 		<div class="armor">
 			<div class="icon">shield</div>
 			<div class="value">@HealthComp.Armour</div>
-		</div>
+		</div> *@
 
 	</div>
 
 	<div class="item">
 
 		<div class="value">@WeaponManager.GetActiveAmmo()</div>
+	</div>
+
+	<div class="crosshair">
+	<img src=@CrossHairPath />
 	</div>
 </root>
 
@@ -45,6 +49,8 @@
 	[Property] HealthComponent HealthComp { get; set; }
 
 	[Property] PlayerWeaponManagerComponent WeaponManager { get; set; }
+
+	[Property] Texture CrossHairPath { get; set; }
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
