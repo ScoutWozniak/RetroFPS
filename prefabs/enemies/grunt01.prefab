@@ -36,7 +36,6 @@
       },
       {
         "__type": "EnemyStateComponent",
-        "__enabled": false,
         "AnimHelper": {
           "_type": "component",
           "go": "3211b00a-d86f-490e-8611-7769079f4af5",
@@ -82,10 +81,6 @@
         "Radius": 16,
         "Separation": 0.25,
         "UpdatePosition": true
-      },
-      {
-        "__type": "EnemyNavLogic",
-        "NavAgent": null
       }
     ],
     "Children": [
