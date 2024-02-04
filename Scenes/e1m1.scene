@@ -36,7 +36,7 @@
     {
       "Id": "c8a85f71-9f3a-4e6f-8c1e-4f5e95f2e1ad",
       "Name": "Point Light (1)",
-      "Position": "1152,384,96",
+      "Position": "1184,384,96",
       "Enabled": true,
       "Components": [
         {
@@ -116,7 +116,7 @@
       "Components": [
         {
           "__type": "Prop",
-          "Health": 0,
+          "Health": 1,
           "IsStatic": false,
           "Model": "models/crate.vmdl",
           "OnPropBreak": null,
@@ -289,10 +289,22 @@
     "NetworkFrequency": 30,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
   },
   "Title": "e1m1",
   "Description": "",
-  "LastSaved": "2024-02-01T21:18:19.782105\u002B10:00",
+  "LastSaved": "2024-02-04T15:31:02.0851591\u002B10:00",
   "__references": []
 }

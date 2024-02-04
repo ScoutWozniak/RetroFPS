@@ -1,0 +1,79 @@
+{
+  "Id": "1c6618ac-ddd7-4880-ad6a-e69ae1dd16f0",
+  "GameObjects": [
+    {
+      "Id": "2a4040ba-b072-480d-b010-efacf40cfc02",
+      "Name": "player",
+      "Position": "-352,-992,64",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Tags": "playerhitbox",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "79254950-b970-417a-989c-27d3f6944e52",
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "maps/enemynav.vpk",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "9d649281-6c08-4eac-b2d8-47e893e3dce0",
+      "Name": "Sun",
+      "Position": "-263.875,-90.80099,228.6888",
+      "Rotation": "-0.2852656,0.8124687,-0.01911513,0.5080878",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "3211b00a-d86f-490e-8611-7769079f4af5",
+      "Name": "grunt01",
+      "Position": "-384,-640,64.00001",
+      "Rotation": "0,0,-0.7071067,0.7071069",
+      "Enabled": true,
+      "__Prefab": "prefabs/enemies/grunt01.prefab"
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "playerhitbox,enemycollider",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "enemynav",
+  "Description": "",
+  "LastSaved": "2024-02-04T18:38:36.4374323\u002B10:00",
+  "__references": []
+}

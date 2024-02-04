@@ -38,6 +38,8 @@ public sealed class EnemyStateComponent : Component
 
 	[Property] CitizenAnimationHelper AnimHelper { get; set; }
 
+	[Property] NavMeshAgent NavAgent { get; set; }
+
 	Vector3 WishVelocity { get; set; }
 
 	protected override void OnEnabled()
@@ -105,17 +107,21 @@ public sealed class EnemyStateComponent : Component
 
 		var playerForward = (Target.Transform.Position - Transform.Position).Normal;
 
-		var startPos = Vector3.Up * 64.0f + Transform.Position;
+		var startPos = Vector3.Up * 56.0f + Transform.Position;
 		var endPos = playerForward * 1000.0f + startPos;
 
 		if (Vector3.Dot( Transform.Rotation.Forward, playerForward ) > 0.25f)
 		{
+			Gizmo.Draw.SolidSphere( startPos, 10.0f );
+			Gizmo.Draw.SolidSphere( endPos, 10.0f );
+
 			var tr = Scene.Trace.Ray( startPos, endPos ).WithoutTags("trigger", "enemy")
 				.Run();
 
 			if ( tr.Hit && tr.GameObject.Tags.Has( "playerhitbox" ) )
 			{
 				State = EnemyState.E_SEARCHING;
+				NavAgent.MoveTo( Target.Transform.Position );
 			}
 		}
 	}
@@ -128,9 +134,6 @@ public sealed class EnemyStateComponent : Component
 			State = EnemyState.E_IDLE;
 			return;
 		}
-
-		var forward = (Target.Transform.Position - Transform.Position).Normal;
-		WishVelocity = forward * MoveSpeed;
 		
 
 		if ((Target.Transform.Position - Transform.Position).Length < 500 && CanAttack())

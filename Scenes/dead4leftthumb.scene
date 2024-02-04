@@ -1,0 +1,126 @@
+{
+  "Id": "c1127c75-bef1-43e0-8d99-025db5905862",
+  "GameObjects": [
+    {
+      "Id": "4500be0d-7673-4cc9-9a40-323814a2e660",
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "BodyGroups": 0,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "c32dbe1d-3f0a-417b-b761-70c71946492f",
+      "Name": "Object (1)",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "BodyGroups": 341,
+          "BoneMergeTarget": {
+            "_type": "component",
+            "go": "4500be0d-7673-4cc9-9a40-323814a2e660",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "bdd7d68d-0464-40d1-80ef-4c5ab85fe60f",
+      "Name": "Sun",
+      "Position": "60.91505,64.25467,56.33375",
+      "Rotation": "-0.2391176,0.8923992,-0.09904575,0.3696438",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "8fdaa6b0-a330-4ced-9d1d-9b67cb4301ce",
+      "Name": "Object",
+      "Position": "-190.0781,76.50337,40.51527",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_sky_night_basic.vmat",
+          "Tint": "0.33488,0.33488,0.33488,1"
+        }
+      ]
+    },
+    {
+      "Id": "c1c7a886-3276-4a4d-a4b5-4d2eaaa367ea",
+      "Name": "Camera",
+      "Position": "33.60954,0.6148475,23.57435",
+      "Rotation": "0.3794094,-0.04995027,0.9159756,0.1205906",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "dead4leftthumb",
+  "Description": "",
+  "LastSaved": "2024-02-03T09:48:57.6254788\u002B10:00",
+  "__references": []
+}
